@@ -1,0 +1,30 @@
+.wrapper {
+  width: 100vw;
+}
+
+.navBox {
+  display: flex;
+  list-style-type: none;
+  background-color: rgb(248, 165, 12);
+  justify-content: space-around;
+  align-content: flex-start;
+  flex-wrap: wrap;
+  padding: 20px;
+}
+
+.navItemPosition {
+  margin-right: 100px;
+}
+
+.navLink {
+  color: white;
+  font-weight: 500;
+  text-decoration: none;
+}
+
+.navLink:focus {
+  text-decoration: none;
+  font-weight: 600;
+  background-color: rgb(226, 157, 78);
+  color: azure;
+}
