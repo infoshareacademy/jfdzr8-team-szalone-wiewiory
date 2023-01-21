@@ -1,21 +1,28 @@
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import "./App.css";
+import { Contact } from "./components/Contact/Contact";
+import { FindPal } from "./components/FindPal/FindPal";
+import { HomePage } from "./components/HomePage/HomePage";
 import { Navbar } from "./components/Navbar/Navbar";
+import Footer from "./components/footer/Footer.jsx";
+import { Premium } from "./components/Premium/Premium";
+import { RegisterLogin } from "./components/RegisterLogin/RegisterLogin";
+import { YourActivity } from "./components/YourActivity/YourActivity";
 
 function App() {
   return (
     <BrowserRouter>
       <Navbar />
+      <Footer />
       <Routes>
         <>
           <Route path="/" element={<HomePage />} />
-          <Route path="/znajdz-fitpala" element={<FindPal />} />
-          <Route path="/moje-fitpale" element={<YourActivity />} />
+          <Route path="/find-fitpal" element={<FindPal />} />
+          <Route path="/my-fitpal" element={<YourActivity />} />
           <Route path="/premium" element={<Premium />} />
-          <Route path="/kontakt" element={<Contact />} />
-          <Route path="/zaloguj-sie" element={<Login />} />
-          <Route path="/zarejestruj-sie" element={<Register />} />
-          <Route path="*" element={<NotFound />} />
+          <Route path="/contact" element={<Contact />} />
+          <Route path="/login" element={<RegisterLogin />} />
+          <Route path="/register" element={<RegisterLogin />} />
         </>
       </Routes>
     </BrowserRouter>
