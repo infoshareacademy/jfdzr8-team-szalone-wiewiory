@@ -1,0 +1,65 @@
+.Footer {
+  background-color: #fa8b29;
+  width: auto;
+  height: 10em;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+  padding-top: 5px;
+  padding-bottom: 5px;
+}
+
+.footerLogo {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 9em;
+}
+
+.footerOption {
+  width: 70vw;
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.footerTitle {
+  margin: 1em;
+}
+
+.footerOption p {
+  color: white;
+  font-weight: bold;
+}
+
+.logos {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  flex-direction: row;
+}
+
+.GitHubLogo {
+  height: 3em;
+  padding: 5px;
+}
+
+.names {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-decoration: none;
+  color: white;
+}
+
+.developers {
+  display: flex;
+
+  justify-content: center;
+
+  color: white;
+}
