@@ -31,23 +31,35 @@ export const FormActivity = () => {
     <form onSubmit={handleSubmit}>
       <div>
         <label htmlFor="date">Podaj datę aktywności:</label>
-        <input type="date" name="date" id="date" />
-        <input type="time" name="time" id="time" />
+        <input type="date" name="date" id="date" required />
+        <input type="time" name="time" id="time" required />
       </div>
       <div>
         <label htmlFor="city">Podaj miasto:</label>
-        <input type="text" name="city" id="city" />
+        <input type="text" name="city" id="city" required />
       </div>
       <div>
         <label htmlFor="place">Podaj dokładne miejsce:</label>
-        <input type="text" name="place" id="place" />
+        <input type="text" name="place" id="place" required />
       </div>
       <div>
         <label htmlFor="activity">Wybierz rodzaj aktywności:</label>
-        <select name="activity" id="activity">
-          <option value="fitness">Fitnes</option>
-          <option value="football">Piłka nożna</option>
+        <select name="activity" id="activity" required>
+          <option value="fitness">Fitness</option>
           <option value="gym">Siłownia</option>
+          <option value="swimming">Pływanie</option>
+          <option value="jogging">Jogging</option>
+          <option value="skating">Jazda na rolkach</option>
+          <option value="cycling">Jazda na rowerze</option>
+          <option value="football">Piłka nożna</option>
+          <option value="basketball">Koszykówka</option>
+          <option value="volleyball">Siatkówka</option>
+          <option value="squash">Squash</option>
+          <option value="tennis">Tenis</option>
+          <option value="table-tennis">Tenis stołowy</option>
+          <option value="climbing-wall">Ścianka wspinaczkowa</option>
+          <option value="trekking">Trekking</option>
+          <option value="boxing">Boks</option>
         </select>
       </div>
       <div>

@@ -1,3 +1,3 @@
 export const JoinedActivities = () => {
-  return <p>CreatedActivities</p>;
+  return <p>JoinedActivities</p>;
 };
