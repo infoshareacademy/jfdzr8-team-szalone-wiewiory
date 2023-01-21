@@ -1,3 +1,13 @@
+import { FormActivity } from "./FormActivities/FormActivities";
+import { CreatedActivities } from "./CreatedActivities/CreatedActivities";
+import { JoinedActivities } from "./JoinedActivities/JoinedActivities";
+
 export const YourActivity = () => {
-  return <p>Your Activities</p>;
+  return (
+    <>
+      <FormActivity />
+      <CreatedActivities />
+      <JoinedActivities />
+    </>
+  );
 };
