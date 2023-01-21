@@ -1,5 +1,6 @@
 import { db } from "../../../api/firebase";
 import { addDoc, collection } from "firebase/firestore";
+import styles from "./FormActivities.module.css";
 
 export const FormActivity = () => {
   const fitpalsCollection = collection(db, "FitPals");
@@ -28,23 +29,57 @@ export const FormActivity = () => {
   };
 
   return (
-    <form onSubmit={handleSubmit}>
-      <div>
-        <label htmlFor="date">Podaj datę aktywności:</label>
-        <input type="date" name="date" id="date" required />
-        <input type="time" name="time" id="time" required />
-      </div>
-      <div>
-        <label htmlFor="city">Podaj miasto:</label>
-        <input type="text" name="city" id="city" required />
-      </div>
-      <div>
-        <label htmlFor="place">Podaj dokładne miejsce:</label>
-        <input type="text" name="place" id="place" required />
-      </div>
-      <div>
-        <label htmlFor="activity">Wybierz rodzaj aktywności:</label>
-        <select name="activity" id="activity" required>
+    <>
+      <h2 className={styles.formHeading}>
+        Dodaj nową aktywność - nowego FitPala
+      </h2>
+      <form onSubmit={handleSubmit} className={styles.form}>
+        <label htmlFor="date" className={styles.label}>
+          Podaj datę aktywności:
+        </label>
+        <div>
+          <input
+            type="date"
+            name="date"
+            id="date"
+            required
+            className={styles.input}
+          />
+          <input
+            type="time"
+            name="time"
+            id="time"
+            required
+            className={styles.input}
+          />
+        </div>
+
+        <label htmlFor="city" className={styles.label}>
+          Podaj miasto:
+        </label>
+        <input
+          type="text"
+          name="city"
+          id="city"
+          required
+          className={styles.input}
+        />
+
+        <label htmlFor="place" className={styles.label}>
+          Podaj dokładne miejsce:
+        </label>
+        <input
+          type="text"
+          name="place"
+          id="place"
+          required
+          className={styles.input}
+        />
+
+        <label htmlFor="activity" className={styles.label}>
+          Wybierz rodzaj aktywności:
+        </label>
+        <select name="activity" id="activity" required className={styles.input}>
           <option value="fitness">Fitness</option>
           <option value="gym">Siłownia</option>
           <option value="swimming">Pływanie</option>
@@ -61,10 +96,13 @@ export const FormActivity = () => {
           <option value="trekking">Trekking</option>
           <option value="boxing">Boks</option>
         </select>
-      </div>
-      <div>
-        <input type="submit" value="Dodaj aktywność" />
-      </div>
-    </form>
+
+        <input
+          type="submit"
+          value="Dodaj aktywność"
+          className={styles.submit}
+        />
+      </form>
+    </>
   );
 };
