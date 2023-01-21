@@ -13,18 +13,16 @@ function App() {
   return (
     <BrowserRouter>
       <Navbar />
-      <Footer />
       <Routes>
-        <>
-          <Route path="/" element={<HomePage />} />
-          <Route path="/find-fitpal" element={<FindPal />} />
-          <Route path="/my-fitpal" element={<YourActivity />} />
-          <Route path="/premium" element={<Premium />} />
-          <Route path="/contact" element={<Contact />} />
-          <Route path="/login" element={<RegisterLogin />} />
-          <Route path="/register" element={<RegisterLogin />} />
-        </>
+        <Route path="/" element={<HomePage />} />
+        <Route path="/find-fitpal" element={<FindPal />} />
+        <Route path="/my-fitpal" element={<YourActivity />} />
+        <Route path="/premium" element={<Premium />} />
+        <Route path="/contact" element={<Contact />} />
+        <Route path="/login" element={<RegisterLogin />} />
+        <Route path="/register" element={<RegisterLogin />} />
       </Routes>
+      <Footer />
     </BrowserRouter>
   );
 }
