@@ -1,3 +1,12 @@
+
+
 export const SearchForm = () => {
-  return <p>search form</p>;
+  return (
+  <>
+  <form>  
+  Select Start and End Date: <br><br>  
+    <input type="date" name="Startdate"> Start date:<br><br>  
+    <input type="date" name="Enddate"> End date:<br><br>  
+   <input type="submit">  
+</form>  </> )
 };
