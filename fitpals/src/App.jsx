@@ -4,7 +4,7 @@ import { Contact } from "./components/Contact/Contact";
 import { FindPal } from "./components/FindPal/FindPal";
 import { HomePage } from "./components/HomePage/HomePage";
 import { Navbar } from "./components/Navbar/Navbar";
-import Footer from "./components/footer/Footer.jsx";
+import Footer from "./components/Footer/Footer.jsx";
 import { Premium } from "./components/Premium/Premium";
 import { RegisterLogin } from "./components/RegisterLogin/RegisterLogin";
 import { YourActivity } from "./components/YourActivity/YourActivity";
