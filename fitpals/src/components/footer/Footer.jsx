@@ -1,6 +1,6 @@
 import styles from "./Footer.module.css";
-import FooterLogo from "../Footer/FooterImages/FitPals.webp";
-import GitHubLogo from "../Footer/FooterImages/GitHubLogo.svg";
+import FooterLogo from "../footer/FooterImages/FitPals.webp";
+import GitHubLogo from "../footer/FooterImages/GitHubLogo.svg";
 
 function Footer() {
   return (
