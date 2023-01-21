@@ -1,3 +1,3 @@
 export const JoinedActivities = () => {
-  return <p>JoinedActivities</p>;
+  return <h2>Aktywności innych użytkowników, w których bierzesz udział</h2>;
 };

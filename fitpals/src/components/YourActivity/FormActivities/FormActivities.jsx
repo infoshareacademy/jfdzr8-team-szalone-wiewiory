@@ -10,10 +10,8 @@ export const FormActivity = () => {
     const { date, time, city, place, activity } = form;
 
     const fitpal = {
-      date: {
-        date: date.value,
-        time: time.value,
-      },
+      date: date.value,
+      time: time.value,
       city: city.value,
       place: place.value,
       activity: activity.value,
