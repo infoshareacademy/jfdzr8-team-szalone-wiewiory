@@ -1,7 +1,7 @@
-import { db } from "../../api/firebase";
+import { db } from "../../../api/firebase";
 import { addDoc, collection } from "firebase/firestore";
 
-export const CreateActivity = () => {
+export const FormActivity = () => {
   const fitpalsCollection = collection(db, "FitPals");
 
   const getFormData = (e) => {
