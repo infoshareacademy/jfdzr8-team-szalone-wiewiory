@@ -19,7 +19,7 @@ export const Results = () => {
       const data = getFitPals(querySnapshot);
       setDisplayFitPals(data);
     });
-  }, []);
+  }, [setDisplayFitPals, fitpalsCollection]);
 
   return (
     <>
