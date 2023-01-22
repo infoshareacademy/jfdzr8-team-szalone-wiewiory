@@ -31,12 +31,7 @@
   justify-content: center;
   align-items: center;
 }
-.selectionInput {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-}
+.selectionInput,
 .forms {
   display: flex;
   justify-content: center;
