@@ -22,11 +22,13 @@ export const RegisterPage = () => {
     const { email, password } = getFormData(e);
 
     createUserWithEmailAndPassword(auth, email, password)
-      .then(() => {
+      .then((jwt) => {
         e.target.reset();
+        console.log(jwt);
         signOut(auth);
       })
       .catch((e) => {
+        console.dir(e);
         alert(firebaseErrors[e.code]);
       });
   };
@@ -47,7 +49,9 @@ export const RegisterPage = () => {
         className={styles.input}
       />
 
-      <input type="submit" value="Zarejestruj się" className={styles.submit} />
+      <button type="submit" className={styles.submit}>
+        Zarejestruj się
+      </button>
     </form>
   );
 };
