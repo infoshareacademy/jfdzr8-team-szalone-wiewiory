@@ -16,10 +16,10 @@ export const CreatedActivities = () => {
 
   useEffect(() => {
     onSnapshot(fitpalsCollection, (querySnapshot) => {
-      const fitpals = getFitpals(querySnapshot);
-      setFitpals(fitpals);
+      const data = getFitpals(querySnapshot);
+      setFitpals(data);
     });
-  }, []);
+  }, [setFitpals, fitpalsCollection]);
 
   return (
     <>
