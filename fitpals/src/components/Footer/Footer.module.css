@@ -1,4 +1,4 @@
-.Footer {
+.footer {
   background-color: #fa8b29;
   width: auto;
   height: 10em;
@@ -35,7 +35,7 @@
   font-weight: bold;
 }
 
-.GitHubLogo {
+.gitHubLogo {
   height: 3em;
   padding: 5px;
 }
@@ -55,7 +55,7 @@
   color: white;
 }
 
-.DevList {
+.devList {
   display: flex;
   justify-content: center;
   align-items: center;

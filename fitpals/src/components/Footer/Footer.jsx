@@ -14,7 +14,7 @@ export function Footer() {
       <img
         src={GitHubLogo}
         alt="logo of github"
-        className={styles.GitHubLogo}
+        className={styles.gitHubLogo}
       />
       {name}
     </a>
@@ -22,12 +22,12 @@ export function Footer() {
   const DevList = () => (
     <div className={styles.devContainer}>
       <h2>DEVELOPERS</h2>
-      <div className={styles.DevList}>{devName.map(developer)}</div>
+      <div className={styles.devList}>{devName.map(developer)}</div>
     </div>
   );
 
   return (
-    <nav className={styles.Footer}>
+    <nav className={styles.footer}>
       <img
         src={FooterLogo}
         alt="logo of company"
