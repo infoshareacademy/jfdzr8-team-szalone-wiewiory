@@ -1,0 +1,15 @@
+.box {
+  display: flex;
+  box-sizing: border-box;
+  margin: 10px;
+  flex-wrap: wrap;
+}
+
+.contentBox {
+  border: solid 2px red;
+  width: 250px;
+  height: 200px;
+  margin: 10px;
+  font-size: 18px;
+  padding: 10px;
+}

@@ -1,3 +1,10 @@
+import { Results } from "./Results/Results";
+
 export const FindPal = () => {
-  return <p>znajdzfitpala</p>;
+  return (
+    <>
+      <p>Znajdź FitPala</p>
+      <Results />
+    </>
+  );
 };
