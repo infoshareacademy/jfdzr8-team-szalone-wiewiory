@@ -35,13 +35,6 @@
   font-weight: bold;
 }
 
-.logos {
-  display: flex;
-  justify-content: space-evenly;
-  align-items: center;
-  flex-direction: row;
-}
-
 .GitHubLogo {
   height: 3em;
   padding: 5px;
@@ -58,9 +51,7 @@
 
 .developers {
   display: flex;
-
   justify-content: center;
-
   color: white;
 }
 
