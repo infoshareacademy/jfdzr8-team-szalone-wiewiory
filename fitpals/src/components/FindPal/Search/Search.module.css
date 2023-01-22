@@ -1,11 +1,59 @@
+.wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
 .formStyling {
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
   margin: 20px;
+  background-color: rgb(243, 140, 92);
+  width: fit-content;
 }
 
-.forms {
+.titles {
+  margin: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.submit {
   margin: 10px;
+}
+
+.formsInput {
+  margin: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.selectionInput {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+.forms {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.cityInput,
+.activityInput,
+.timeInput,
+.dateInput,
+.submit {
+  opacity: 0.5;
+  background-color: white;
+  border-radius: 20px;
+  height: 50px;
+  border: 2px solid;
+  border-color: black;
+  box-shadow: 8px 8px 24px 0px rgba(198, 198, 198, 1);
 }
