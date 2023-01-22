@@ -11,7 +11,7 @@
   flex-direction: column;
   margin: 20px;
   background-color: rgb(243, 140, 92);
-  width: fit-content;
+  width: 50em;
 }
 
 .titles {

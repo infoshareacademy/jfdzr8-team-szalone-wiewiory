@@ -3,7 +3,7 @@ import { useEffect, useState } from "react";
 import { db } from "../../../api/firebase";
 import styles from "./Results.module.css";
 
-export const Results = () => {
+export const Results = ({ searchData }) => {
   const [displayFitPals, setDisplayFitPals] = useState([]);
   const fitpalsCollection = collection(db, "FitPals");
 
@@ -17,9 +17,17 @@ export const Results = () => {
   useEffect(() => {
     onSnapshot(fitpalsCollection, (querySnapshot) => {
       const data = getFitPals(querySnapshot);
-      setDisplayFitPals(data);
+      const filteredData = data.filter((element) => {
+        if (searchData.city && element.city !== searchData.city) return false;
+        if (searchData.activity && element.activity !== searchData.activity)
+          return false;
+        if (searchData.date && element.date !== searchData.date) return false;
+        if (searchData.time && element.time !== searchData.time) return false;
+        return true;
+      });
+      setDisplayFitPals(filteredData);
     });
-  }, [setDisplayFitPals, fitpalsCollection]);
+  }, [setDisplayFitPals, searchData]);
 
   return (
     <>
