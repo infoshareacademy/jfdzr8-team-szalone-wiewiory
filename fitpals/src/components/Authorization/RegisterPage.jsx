@@ -6,22 +6,9 @@ import styles from "./RegisterPage.module.css";
 export const RegisterPage = () => {
   const handleRegister = (e) => {
     e.preventDefault();
+    const { email, password } = e.target;
 
-    const getFormData = (e) => {
-      const form = e.target;
-      const { email, password } = form;
-
-      const formData = {
-        email: email.value,
-        password: password.value,
-      };
-
-      return formData;
-    };
-
-    const { email, password } = getFormData(e);
-
-    createUserWithEmailAndPassword(auth, email, password)
+    createUserWithEmailAndPassword(auth, email.value, password.value)
       .then((jwt) => {
         e.target.reset();
         console.log(jwt);
