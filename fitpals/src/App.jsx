@@ -6,8 +6,9 @@ import { HomePage } from "./components/HomePage/HomePage";
 import { Navbar } from "./components/Navbar/Navbar";
 import { Footer } from "./components/Footer/Footer";
 import { Premium } from "./components/Premium/Premium";
-import { RegisterLogin } from "./components/RegisterLogin/RegisterLogin";
 import { YourActivity } from "./components/YourActivity/YourActivity";
+import { LoginPage } from "./components/Authorization/LoginPage";
+import { RegisterPage } from "./components/Authorization/RegisterPage";
 
 function App() {
   return (
@@ -19,8 +20,8 @@ function App() {
         <Route path="/my-fitpal" element={<YourActivity />} />
         <Route path="/premium" element={<Premium />} />
         <Route path="/contact" element={<Contact />} />
-        <Route path="/login" element={<RegisterLogin />} />
-        <Route path="/register" element={<RegisterLogin />} />
+        <Route path="/login" element={<LoginPage />} />
+        <Route path="/register" element={<RegisterPage />} />
       </Routes>
       <Footer />
     </BrowserRouter>
