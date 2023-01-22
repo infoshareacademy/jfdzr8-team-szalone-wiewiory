@@ -2,7 +2,7 @@ import styles from "./Footer.module.css";
 import FooterLogo from "../Footer/FooterImages/FitPals.webp";
 import GitHubLogo from "../Footer/FooterImages/GitHubLogo.svg";
 
-function Footer() {
+export function Footer() {
   return (
     <nav className={styles.Footer}>
       <img
@@ -58,5 +58,3 @@ function Footer() {
     </nav>
   );
 }
-
-export default Footer;
