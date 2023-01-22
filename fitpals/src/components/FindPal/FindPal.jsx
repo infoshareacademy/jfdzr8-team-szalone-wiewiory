@@ -1,5 +1,11 @@
-import { Search } from "./Search/Search";
+
+import { Results } from "./Results/Results";
 
 export const FindPal = () => {
-  return <Search />;
-};
+  return (
+    <>
+      <p>Znajdź FitPala</p>
+      <Search />
+      <Results />
+    </>
+  );
