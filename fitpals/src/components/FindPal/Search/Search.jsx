@@ -1,21 +1,41 @@
 import styles from "./Search.module.css";
 
-export const Search = () => {
+import { useRef } from "react";
+
+export const Search = ({ setSearchData }) => {
+  const input = useRef(null);
+
+  const getFormData = (e) => {
+    e.preventDefault();
+    const form = e.target;
+    const { date, time, city, activity } = form;
+
+    const fitpal = {
+      date: date.value,
+      time: time.value,
+      city: city.value,
+      activity: activity.value,
+    };
+    setSearchData(fitpal);
+  };
+
   return (
     <div className={styles.wrapper}>
-      <form className={styles.formStyling}>
+      <form onSubmit={getFormData} className={styles.formStyling}>
         <h2 className={styles.formHeading}>Wyszukaj swojego FitPala !</h2>
         <div className={styles.forms}>
           <label htmlFor="date" className={styles.titles}>
             Podaj datę aktywności:
           </label>
           <input
+            ref={input}
             type="date"
             name="date"
             id="date"
             className={`${styles.formsInput} ${styles.dateInput}`}
           />
           <input
+            ref={input}
             type="time"
             name="time"
             id="time"
@@ -27,10 +47,10 @@ export const Search = () => {
             Podaj miejscowość:
           </label>
           <input
+            ref={input}
             type="text"
             name="city"
             id="city"
-            value="Miejscowość"
             className={`${styles.formsInput} ${styles.cityInput}`}
           />
         </div>
@@ -39,10 +59,12 @@ export const Search = () => {
             Wybierz rodzaj aktywności:
           </label>
           <select
+            ref={input}
             name="activity"
             id="activity"
             className={`${styles.formsInput} ${styles.activityInput}`}
           >
+            <option value="">Wszystkie</option>
             <option value="Boks">Boks</option>
             <option value="Fitness">Fitness</option>
             <option value="Piłka Nożna">Piłka Nożna</option>
