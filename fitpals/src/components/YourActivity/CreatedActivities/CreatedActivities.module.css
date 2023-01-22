@@ -1,0 +1,16 @@
+.heading {
+  text-align: center;
+  margin: 2rem;
+  font-size: 2rem;
+}
+
+.listItem {
+  text-align: center;
+  margin: 0.5rem;
+  padding: 0.5rem;
+  background-color: rgb(241, 238, 238);
+}
+
+.activity {
+  text-transform: uppercase;
+}
