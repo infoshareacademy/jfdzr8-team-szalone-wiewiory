@@ -1,3 +1,5 @@
+import { Search } from "./Search/Search";
+
 export const FindPal = () => {
-  return <p>znajdzfitpala</p>;
+  return <Search />;
 };
