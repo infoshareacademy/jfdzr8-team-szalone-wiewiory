@@ -1,5 +1,5 @@
-
 import { Results } from "./Results/Results";
+import { Search } from "./Search/Search";
 
 export const FindPal = () => {
   return (
@@ -9,3 +9,4 @@ export const FindPal = () => {
       <Results />
     </>
   );
+};
