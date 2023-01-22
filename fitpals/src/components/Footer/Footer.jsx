@@ -4,10 +4,10 @@ import GitHubLogo from "../Footer/FooterImages/GitHubLogo.svg";
 
 export function Footer() {
   const devName = [
-    { name: "Olga", profile: "https://www.github.pl/Olga" },
-    { name: "Kasia", profile: "https://www.github.pl/Kasia" },
-    { name: "Adam", profile: "https://www.github.pl/Adam" },
-    { name: "Maciej", profile: "https://www.github.pl/Maciej" },
+    { name: "Olga", profile: "https://github.com/olga-grochowska" },
+    { name: "Kasia", profile: "https://github.com/katarzyna-skibowska" },
+    { name: "Adam", profile: "https://github.com/AdamPawlowski84" },
+    { name: "Maciej", profile: "https://github.com/ValentinoMaciej" },
   ];
   const developer = ({ name, profile }) => (
     <a href={profile} className={styles.names}>
