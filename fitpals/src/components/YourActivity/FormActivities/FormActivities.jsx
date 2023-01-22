@@ -78,21 +78,21 @@ export const FormActivity = () => {
           Wybierz rodzaj aktywności:
         </label>
         <select name="activity" id="activity" required className={styles.input}>
-          <option value="fitness">Fitness</option>
-          <option value="gym">Siłownia</option>
-          <option value="swimming">Pływanie</option>
-          <option value="jogging">Jogging</option>
-          <option value="skating">Jazda na rolkach</option>
-          <option value="cycling">Jazda na rowerze</option>
-          <option value="football">Piłka nożna</option>
-          <option value="basketball">Koszykówka</option>
-          <option value="volleyball">Siatkówka</option>
-          <option value="squash">Squash</option>
-          <option value="tennis">Tenis</option>
-          <option value="table-tennis">Tenis stołowy</option>
-          <option value="climbing-wall">Ścianka wspinaczkowa</option>
-          <option value="trekking">Trekking</option>
-          <option value="boxing">Boks</option>
+          <option value="Fitness">Fitness</option>
+          <option value="Siłownia">Siłownia</option>
+          <option value="Pływanie">Pływanie</option>
+          <option value="Jogging">Jogging</option>
+          <option value="Jazda na rolkach">Jazda na rolkach</option>
+          <option value="Jazda na rowerze">Jazda na rowerze</option>
+          <option value="Piłka nożna">Piłka nożna</option>
+          <option value="Koszykówka">Koszykówka</option>
+          <option value="Siatkówka">Siatkówka</option>
+          <option value="Squash">Squash</option>
+          <option value="Tennis">Tenis</option>
+          <option value="Tenis stołowy">Tenis stołowy</option>
+          <option value="Ścianka wspinaczkowa">Ścianka wspinaczkowa</option>
+          <option value="Trekking">Trekking</option>
+          <option value="Boks">Boks</option>
         </select>
 
         <input
