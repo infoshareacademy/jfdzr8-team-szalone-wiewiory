@@ -1,0 +1,93 @@
+.swiper {
+  width: 100%;
+  height: 100%;
+}
+
+.swiper-slide {
+  text-align: center;
+  font-size: 18px;
+  background: #fff;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  -webkit-justify-content: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  -webkit-align-items: center;
+  align-items: center;
+}
+
+.swiper-slide img {
+  display: block;
+  width: 100px;
+  height: 100px;
+  object-fit: cover;
+}
+
+.sportImg {
+  display: block;
+  width: 50%;
+  margin-left: 25%;
+  margin-bottom: 3rem;
+  border-radius: 10px;
+  margin-top: 10%;
+}
+
+.homePageTitle {
+  font-size: 48px;
+  text-align: center;
+  margin: 4rem;
+}
+
+.blockDescriptionFit {
+  display: flex;
+  text-align: center;
+}
+.blockDescriptionRun {
+  display: flex;
+  flex-direction: row-reverse;
+  text-align: center;
+}
+
+.fitnessImg {
+  width: 50%;
+  height: 20%;
+}
+
+.runningImg {
+  width: 50%;
+  height: 30%;
+}
+
+.icon {
+  height: 8rem;
+  width: 8rem;
+  margin: 2rem;
+}
+
+.sliderText {
+  margin-top: 10%;
+  text-align: center;
+}
+
+.blockText {
+  text-align: center;
+  margin-top: 15%;
+}
+
+.block {
+  margin-top: 10%;
+}
+
+.homePageText {
+  margin: 10%;
+  font-size: 2rem;
+}
+
+.description {
+  text-align: center;
+}
