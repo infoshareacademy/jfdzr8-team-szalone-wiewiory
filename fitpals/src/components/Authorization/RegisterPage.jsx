@@ -2,22 +2,34 @@ import { createUserWithEmailAndPassword, signOut } from "firebase/auth";
 import { auth } from "../../api/firebase";
 import { firebaseErrors } from "./firebaseErrors";
 import styles from "./RegisterPage.module.css";
+import { db } from "../../api/firebase";
+import { addDoc, collection } from "firebase/firestore";
 
 export const RegisterPage = () => {
-  const handleRegister = (e) => {
+  const usersCollection = collection(db, "Users");
+
+  const handleRegister = async (e) => {
     e.preventDefault();
     const { email, password } = e.target;
 
-    createUserWithEmailAndPassword(auth, email.value, password.value)
-      .then((jwt) => {
-        e.target.reset();
-        console.log(jwt);
-        signOut(auth);
-      })
-      .catch((e) => {
-        console.dir(e);
-        alert(firebaseErrors[e.code]);
+    try {
+      const { user } = await createUserWithEmailAndPassword(
+        auth,
+        email.value,
+        password.value
+      );
+      console.log(user);
+      const res = await addDoc(usersCollection, {
+        Email: user.email,
+        UUID: user.uid,
       });
+      // console.log(res);
+    } catch (e) {
+      console.dir(e);
+      alert(firebaseErrors[e.code]);
+    }
+    e.target.reset();
+    signOut(auth);
   };
   return (
     <form onSubmit={handleRegister} className={styles.form}>
