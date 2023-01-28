@@ -28,7 +28,7 @@ export const Results = ({ searchData }) => {
       });
       setDisplayFitPals(filteredData);
     });
-  }, [setDisplayFitPals, searchData]);
+  }, [setDisplayFitPals, searchData, fitpalsCollection]);
 
   return (
     <>
