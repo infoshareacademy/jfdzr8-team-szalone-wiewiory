@@ -11,7 +11,9 @@ export const LoginPage = () => {
     signInWithEmailAndPassword(auth, email.value, password.value)
       .then((jwt) => {
         e.target.reset();
-        console.log(jwt);
+        const { uid } = jwt.user;
+        window.localStorage.setItem("currentUser", uid);
+        console.log(uid);
       })
       .catch((e) => {
         console.dir(e);

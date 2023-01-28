@@ -1,9 +1,17 @@
 import { db } from "../../../api/firebase";
 import { addDoc, collection } from "firebase/firestore";
+import { getAuth } from "firebase/auth";
 import styles from "./FormActivities.module.css";
 
 export const FormActivity = () => {
   const fitpalsCollection = collection(db, "FitPals");
+
+  const currentUser = window.localStorage.getItem("currentUser");
+  console.log("formActivities", currentUser);
+
+  const auth = getAuth();
+
+  console.log("user", auth.currentUser);
 
   const getFormData = (e) => {
     const form = e.target;
@@ -15,6 +23,7 @@ export const FormActivity = () => {
       city: city.value,
       place: place.value,
       activity: activity.value,
+      creator: currentUser,
     };
 
     form.reset();
