@@ -6,6 +6,7 @@ import styles from "./CreatedActivities.module.css";
 export const CreatedActivities = () => {
   const [fitpals, setFitpals] = useState([]);
   const fitpalsCollection = collection(db, "FitPals");
+  const currentUser = window.localStorage.getItem("currentUser");
 
   const getFitpals = (querySnapshot) => {
     return querySnapshot.docs.map((doc) => ({
@@ -17,9 +18,12 @@ export const CreatedActivities = () => {
   useEffect(() => {
     onSnapshot(fitpalsCollection, (querySnapshot) => {
       const data = getFitpals(querySnapshot);
-      setFitpals(data);
+      const filteredData = data.filter(
+        (element) => element.creator === currentUser
+      );
+      setFitpals(filteredData);
     });
-  }, [setFitpals, fitpalsCollection]);
+  }, [currentUser, fitpalsCollection]);
 
   return (
     <>
