@@ -1,3 +1,4 @@
+import React from "react";
 import styles from "./Footer.module.css";
 import FooterLogo from "../Footer/FooterImages/FitPals.webp";
 import GitHubLogo from "../Footer/FooterImages/GitHubLogo.svg";
@@ -10,14 +11,16 @@ export function Footer() {
     { name: "Maciej", profile: "https://github.com/ValentinoMaciej" },
   ];
   const developer = ({ name, profile }) => (
-    <a href={profile} className={styles.names}>
-      <img
-        src={GitHubLogo}
-        alt="logo of github"
-        className={styles.gitHubLogo}
-      />
-      {name}
-    </a>
+    <React.Fragment key={name}>
+      <a href={profile} className={styles.names}>
+        <img
+          src={GitHubLogo}
+          alt="logo of github"
+          className={styles.gitHubLogo}
+        />
+        {name}
+      </a>
+    </React.Fragment>
   );
   const DevList = () => (
     <div className={styles.devContainer}>

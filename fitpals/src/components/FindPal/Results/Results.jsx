@@ -41,6 +41,7 @@ export const Results = ({ searchData }) => {
             date={date}
             time={time}
             place={place}
+            key={id}
           />
         ))}
       </div>
