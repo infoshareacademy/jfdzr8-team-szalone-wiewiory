@@ -24,6 +24,7 @@ export const FormActivity = () => {
       place: place.value,
       activity: activity.value,
       creator: currentUser,
+      joinedUsers: [currentUser],
     };
 
     form.reset();

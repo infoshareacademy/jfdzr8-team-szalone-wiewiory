@@ -35,6 +35,6 @@
   text-align: center;
 }
 
-li:last-child {
+.premiumList li:last-child {
   font-weight: bolder;
 }
