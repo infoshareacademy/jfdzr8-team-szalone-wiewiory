@@ -1,6 +1,7 @@
 import { collection, onSnapshot } from "@firebase/firestore";
 import { useEffect, useState } from "react";
 import { db } from "../../../api/firebase";
+import { FitPal } from "./FitPal";
 import styles from "./Results.module.css";
 
 export const Results = ({ searchData }) => {
@@ -33,23 +34,14 @@ export const Results = ({ searchData }) => {
     <>
       <div className={styles.box}>
         {displayFitPals.map(({ id, activity, city, place, date, time }) => (
-          <div key={id} className={styles.contentBox}>
-            <p>
-              <b>Aktywność:</b> {activity}
-            </p>
-            <p>
-              <b>Miasto:</b> {city}
-            </p>
-            <p>
-              <b>Data:</b> {date}
-            </p>
-            <p>
-              <b>Godzina:</b> {time}
-            </p>
-            <p>
-              <b>Miejsce:</b> {place}
-            </p>
-          </div>
+          <FitPal
+            id={id}
+            activity={activity}
+            city={city}
+            date={date}
+            time={time}
+            place={place}
+          />
         ))}
       </div>
     </>
