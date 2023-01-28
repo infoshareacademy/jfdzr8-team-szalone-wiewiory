@@ -1,0 +1,65 @@
+.contactForm {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 20em;
+}
+
+.sendButton {
+  height: 3em;
+  width: 50%;
+  border-radius: 15px;
+  display: flex;
+  justify-content: center;
+  margin: 2em 0 2em 0;
+  background-color: #f6f6f6;
+  color: black;
+  border: none;
+  border-radius: 10px;
+  box-shadow: 0px 0px 2px 2px rgb(0, 0, 0);
+}
+
+.sendButton:hover {
+  background-color: orangered;
+  transition: 0.7s;
+  color: white;
+}
+.contactSection {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  background: url(../Contact/ContactImages/contactBackground.jpg) no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+  height: 50em;
+}
+
+.mapGoogle {
+  margin: 2em 0 2em 0;
+}
+
+.contactInformation {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  font-weight: bolder;
+}
+.address {
+  text-align: center;
+}
+
+.formLabel {
+  color: white;
+  font-size: larger;
+}
+.inputStyle {
+  background-color: orangered;
+}
+
+.textarealInput {
+  max-width: 300px;
+  max-height: 300px;
+}
