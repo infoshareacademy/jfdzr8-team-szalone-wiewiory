@@ -27,7 +27,7 @@ export const JoinedActivities = () => {
 
   return (
     <>
-      <h2 className={styles.heading}>Aktywności utworzone przez Ciebie</h2>
+      <h2 className={styles.heading}>Aktywności, do których dołączyłeś.</h2>
       <ul>
         {fitpals.map(({ id, date, time, city, place, activity }) => (
           <li key={id} className={styles.listItem}>
