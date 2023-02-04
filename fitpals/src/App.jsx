@@ -11,7 +11,6 @@ import { LoginPage } from "./components/Authorization/LoginPage";
 import { RegisterPage } from "./components/Authorization/RegisterPage";
 import { AuthContext } from "./components/Authorization/AuthContext";
 import { useState } from "react";
-import { ActivityAdded } from "./components/Modals/ActivityAdded/ActivityAdded";
 
 function App() {
   const [context, setContext] = useState();
@@ -29,7 +28,6 @@ function App() {
           <Route path="/contact" element={<Contact />} />
           <Route path="/register" element={<RegisterPage />} />
         </Routes>
-        <ActivityAdded />
         <Footer />
       </BrowserRouter>
     </AuthContext.Provider>
