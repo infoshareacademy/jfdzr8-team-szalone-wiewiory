@@ -11,4 +11,22 @@
   box-shadow: 0 20px 40px -5px;
   position: fixed;
   border-radius: 25px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.logo {
+  position: absolute;
+  left: -50px;
+  top: -30px;
+}
+
+.modalClose {
+  position: absolute;
+  right: 50px;
+  top: 20px;
+}
+
+.modal h1 {
+  text-align: center;
 }
