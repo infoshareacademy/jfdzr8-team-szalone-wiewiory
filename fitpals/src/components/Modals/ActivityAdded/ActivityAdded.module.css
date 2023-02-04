@@ -14,6 +14,10 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  background: url(../../Images/background1.png) no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+  background-color: chocolate;
 }
 .logo {
   position: absolute;
@@ -29,4 +33,5 @@
 
 .modal h1 {
   text-align: center;
+  color: blue;
 }

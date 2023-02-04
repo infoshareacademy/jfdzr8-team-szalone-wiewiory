@@ -1,6 +1,6 @@
 import React from "react";
 import styles from "./RegisterModal.module.css";
-import Logo from "../../Logo/logo.png";
+import Logo from "../../Logo/logo2.png";
 
 export const RegisterModal = ({ show, setShow }) => {
   const content = show && (

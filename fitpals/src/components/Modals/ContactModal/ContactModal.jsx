@@ -1,6 +1,6 @@
 import React from "react";
 import styles from "./ContactModal.module.css";
-import Logo from "../../Logo/logo.png";
+import Logo from "../../Logo/logo2.png";
 
 export const ContactModal = ({ show, setShow }) => {
   const content = show && (
