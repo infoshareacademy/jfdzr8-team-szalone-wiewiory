@@ -1,6 +1,6 @@
 import { db } from "../../../api/firebase";
 import { useState, useEffect } from "react";
-import { collection, onSnapshot } from "firebase/firestore";
+import { collection, onSnapshot, deleteDoc, doc } from "firebase/firestore";
 import styles from "./CreatedActivities.module.css";
 
 export const CreatedActivities = () => {
@@ -13,6 +13,12 @@ export const CreatedActivities = () => {
       id: doc.id,
       ...doc.data(),
     }));
+  };
+
+  const handleDelete = (id) => {
+    const docRef = doc(db, "FitPals", id);
+    deleteDoc(docRef);
+    alert("Czy chcesz aby Twoja aktywność została usunięta?")
   };
 
   useEffect(() => {
@@ -36,6 +42,7 @@ export const CreatedActivities = () => {
             <p>Miasto: {city}</p>
             <p>Miejsce: {place}</p>
             <p className={styles.activity}>Aktywność: {activity}</p>
+            <button onClick={() => handleDelete(id)}>Usuń aktywność</button>
           </li>
         ))}
       </ul>
