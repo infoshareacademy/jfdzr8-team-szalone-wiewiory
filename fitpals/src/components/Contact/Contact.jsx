@@ -36,17 +36,20 @@ export const Contact = () => {
           type="text"
           name="user_name"
           className={`${styles.nameInput} ${styles.inputStyle}`}
+          required
         />
         <label className={styles.formLabel}>E-MAIL</label>
         <input
           type="email"
           name="user_email"
           className={`${styles.emailInput} ${styles.inputStyle}`}
+          required
         />
         <label className={styles.formLabel}>WIADOMOŚĆ</label>
         <textarea
           name="message"
           className={`${styles.textarealInput} ${styles.inputStyle}`}
+          required
         />
         <input
           type="submit"
