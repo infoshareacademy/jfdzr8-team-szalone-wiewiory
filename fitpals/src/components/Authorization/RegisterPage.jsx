@@ -4,10 +4,12 @@ import { firebaseErrors } from "./firebaseErrors";
 import styles from "./RegisterPage.module.css";
 import { db } from "../../api/firebase";
 import { addDoc, collection } from "firebase/firestore";
+import React, { useState } from "react";
+import { RegisterModal } from "../Modals/RegisterModal/RegisterModal";
 
 export const RegisterPage = () => {
   const usersCollection = collection(db, "Users");
-
+  const [show, setShow] = useState(false);
   const handleRegister = async (e) => {
     e.preventDefault();
     const { email, password } = e.target;
@@ -48,9 +50,16 @@ export const RegisterPage = () => {
         className={styles.input}
       />
 
-      <button type="submit" className={styles.submit}>
+      <button
+        onClick={() => {
+          setShow(true);
+        }}
+        type="submit"
+        className={styles.submit}
+      >
         Zarejestruj się
       </button>
+      <RegisterModal show={show} setShow={setShow} />
     </form>
   );
 };

@@ -1,11 +1,10 @@
 import styles from "./Contact.module.css";
-import React, { useRef } from "react";
+import React, { useRef, useState } from "react";
 import emailjs from "@emailjs/browser";
+import { ContactModal } from "../Modals/ContactModal/ContactModal";
 
 export const Contact = () => {
-  const myClick = () => {
-    return alert("Wysłano wiadomość, dziękujemy za kontakt !");
-  };
+  const [show, setShow] = useState(false);
   const form = useRef();
 
   const sendEmail = (e) => {
@@ -56,8 +55,12 @@ export const Contact = () => {
           type="submit"
           value="Wyślij"
           className={styles.sendButton}
-          onClick={myClick}
+          onClick={() => {
+            setShow(true);
+            sendEmail();
+          }}
         />
+        <ContactModal show={show} setShow={setShow} />
       </form>
       <article className={styles.contactInformation}>
         <h2 className={styles.companyName}>FITPALS</h2>
