@@ -13,10 +13,10 @@ export const Contact = () => {
 
     emailjs
       .sendForm(
-        "service_w8vwxgk",
-        "template_u0zuym2",
+        "service_pbmemur",
+        "template_6y2i8og",
         form.current,
-        "qpmSdzPgHhjJyv3vt"
+        "kHTz6Ictn6qoypjW-"
       )
       .then(
         (result) => {
@@ -36,17 +36,20 @@ export const Contact = () => {
           type="text"
           name="user_name"
           className={`${styles.nameInput} ${styles.inputStyle}`}
+          required
         />
         <label className={styles.formLabel}>E-MAIL</label>
         <input
           type="email"
           name="user_email"
           className={`${styles.emailInput} ${styles.inputStyle}`}
+          required
         />
         <label className={styles.formLabel}>WIADOMOŚĆ</label>
         <textarea
           name="message"
           className={`${styles.textarealInput} ${styles.inputStyle}`}
+          required
         />
         <input
           type="submit"
@@ -60,7 +63,7 @@ export const Contact = () => {
         <article className={styles.address}>
           <p>ul. Bootcampowa, pokój 69</p>
           <p>404 City Not-Found</p>
-          <p>e-mail: biuro@fitpals.pl</p>
+          <p>e-mail: biuro.fitpals@gmail.com</p>
           <p>tel. +48 XXX XXX XXX</p>
         </article>
       </article>
