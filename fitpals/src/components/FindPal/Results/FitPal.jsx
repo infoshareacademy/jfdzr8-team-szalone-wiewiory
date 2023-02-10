@@ -2,11 +2,13 @@ import { collection, onSnapshot, updateDoc, doc } from "firebase/firestore";
 import React, { useRef, useEffect } from "react";
 import { db } from "../../../api/firebase";
 import styles from "./Results.module.css";
+import { NavLink } from "react-router-dom";
 
 export const FitPal = ({ id, activity, city, date, time, place }) => {
   const fitpal = useRef({});
   const currentUser = window.localStorage.getItem("currentUser");
   const fitpalsCollection = collection(db, "FitPals");
+
 
   const getFitPals = (querySnapshot) => {
     return querySnapshot.docs.map((doc) => ({
@@ -54,7 +56,9 @@ export const FitPal = ({ id, activity, city, date, time, place }) => {
       <p>
         <b>Miejsce:</b> {place}
       </p>
-      <button onClick={handleOnClick}>Dołącz</button>
+      <NavLink to="/joined">
+        <button onClick={handleOnClick}>Dołącz</button>
+      </NavLink>
     </div>
   );
 };

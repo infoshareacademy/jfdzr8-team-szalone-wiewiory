@@ -11,6 +11,7 @@ import { LoginPage } from "./components/Authorization/LoginPage";
 import { RegisterPage } from "./components/Authorization/RegisterPage";
 import { AuthContext } from "./components/Authorization/AuthContext";
 import { useState } from "react";
+import { JoinedActivities } from "./components/YourActivity/JoinedActivities/JoinedActivities";
 
 function App() {
   const [context, setContext] = useState();
@@ -23,6 +24,7 @@ function App() {
           <Route path="/" element={<HomePage />} />
           <Route path="/find-fitpal" element={<FindPal />} />
           <Route path="/my-fitpal" element={<YourActivity />} />
+          <Route path="/joined" element={<JoinedActivities />} />
           <Route path="/login" element={<LoginPage />} />
           <Route path="/premium" element={<Premium />} />
           <Route path="/contact" element={<Contact />} />
