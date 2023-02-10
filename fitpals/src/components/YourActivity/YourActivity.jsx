@@ -7,19 +7,15 @@ import styles from "./YourActivity.module.css";
 export const YourActivity = () => {
   const [currentTab, setCurrentTab] = useState("1");
   const tabs = [
+
     {
       id: 1,
-      tabTitle: "Utwórz Aktywność",
-      content: <FormActivity />,
-    },
-    {
-      id: 2,
       tabTitle: "Aktywności Uworzone",
       content: <CreatedActivities />,
     },
 
     {
-      id: 3,
+      id: 2,
       tabTitle: "Dołączono",
       content: <JoinedActivities />,
     },
@@ -31,6 +27,7 @@ export const YourActivity = () => {
 
   return (
     <>
+      <FormActivity />
       <div className={styles.container}>
         <div className={styles.tabs}>
           {tabs.map((tab, i) => (
