@@ -3,6 +3,7 @@ import React, { useRef, useEffect, useState } from "react";
 import { db } from "../../../api/firebase";
 import { ActivityAdded } from "../../Modals/ActivityAdded/ActivityAdded";
 import styles from "./Results.module.css";
+import { NavLink } from "react-router-dom";
 
 export const FitPal = ({ id, activity, city, date, time, place }) => {
   const fitpal = useRef({});
@@ -10,6 +11,7 @@ export const FitPal = ({ id, activity, city, date, time, place }) => {
   const fitpalsCollection = collection(db, "FitPals");
   const [show, setShow] = useState(false);
   const [disable, setDisable] = useState(false);
+
 
   const getFitPals = (querySnapshot) => {
     return querySnapshot.docs.map((doc) => ({
@@ -57,16 +59,13 @@ export const FitPal = ({ id, activity, city, date, time, place }) => {
       <p>
         <b>Miejsce:</b> {place}
       </p>
-      <button
-        disabled={disable}
-        onClick={() => {
+      <NavLink to="/joined">
+        <button onClick={() => {
           setDisable(true);
           setShow(true);
           handleOnClick();
-        }}
-      >
-        Dołącz
-      </button>
+        }}>Dołącz</button>
+      </NavLink>
       <ActivityAdded show={show} setShow={setShow} />
     </div>
   );

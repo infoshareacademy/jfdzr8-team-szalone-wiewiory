@@ -10,8 +10,10 @@ import { YourActivity } from "./components/YourActivity/YourActivity";
 import { LoginPage } from "./components/Authorization/LoginPage";
 import { RegisterPage } from "./components/Authorization/RegisterPage";
 import { AuthContext } from "./components/Authorization/AuthContext";
+import { JoinedActivities } from "./components/YourActivity/JoinedActivities/JoinedActivities";
 import { useEffect, useState } from "react";
 import { auth } from "./api/firebase";
+
 
 function App() {
   const [context, setContext] = useState();
@@ -37,6 +39,7 @@ function App() {
           <Route path="/" element={<HomePage />} />
           <Route path="/find-fitpal" element={<FindPal />} />
           <Route path="/my-fitpal" element={<YourActivity />} />
+          <Route path="/joined" element={<JoinedActivities />} />
           <Route path="/login" element={<LoginPage />} />
           <Route path="/premium" element={<Premium />} />
           <Route path="/contact" element={<Contact />} />
