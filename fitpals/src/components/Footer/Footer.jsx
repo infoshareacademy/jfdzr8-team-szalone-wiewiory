@@ -40,7 +40,7 @@ export function Footer() {
         <p className={styles.footerTitle}>FITPALS</p>
         <p>ul. Bootcampowa, pokój 69</p>
         <p>404 City Not-Found</p>
-        <p>e-mail: biuro@fitpals.pl</p>
+        <p>e-mail: biuro.fitpals@gmail.com</p>
         <p>tel. +48 XXX XXX XXX</p>
       </article>
       <DevList />

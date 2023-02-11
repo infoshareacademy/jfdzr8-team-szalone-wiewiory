@@ -1,6 +1,7 @@
 import { collection, onSnapshot, updateDoc, doc } from "firebase/firestore";
-import React, { useRef, useEffect } from "react";
+import React, { useRef, useEffect, useState } from "react";
 import { db } from "../../../api/firebase";
+import { ActivityAdded } from "../../Modals/ActivityAdded/ActivityAdded";
 import styles from "./Results.module.css";
 import { NavLink } from "react-router-dom";
 
@@ -8,6 +9,8 @@ export const FitPal = ({ id, activity, city, date, time, place }) => {
   const fitpal = useRef({});
   const currentUser = window.localStorage.getItem("currentUser");
   const fitpalsCollection = collection(db, "FitPals");
+  const [show, setShow] = useState(false);
+  const [disable, setDisable] = useState(false);
 
 
   const getFitPals = (querySnapshot) => {
@@ -57,8 +60,13 @@ export const FitPal = ({ id, activity, city, date, time, place }) => {
         <b>Miejsce:</b> {place}
       </p>
       <NavLink to="/joined">
-        <button onClick={handleOnClick}>Dołącz</button>
+        <button onClick={() => {
+          setDisable(true);
+          setShow(true);
+          handleOnClick();
+        }}>Dołącz</button>
       </NavLink>
+      <ActivityAdded show={show} setShow={setShow} />
     </div>
   );
 };

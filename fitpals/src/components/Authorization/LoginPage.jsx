@@ -2,8 +2,11 @@ import { signInWithEmailAndPassword } from "firebase/auth";
 import { auth } from "../../api/firebase";
 import { firebaseErrors } from "./firebaseErrors";
 import styles from "./RegisterPage.module.css";
+import React, { useState } from "react";
+import { LoginModal } from "../Modals/LoginModal/LoginModal";
 
 export const LoginPage = () => {
+  const [show, setShow] = useState(false);
   const handleLogin = (e) => {
     e.preventDefault();
     const { email, password } = e.target;
@@ -37,9 +40,16 @@ export const LoginPage = () => {
         className={styles.input}
       />
 
-      <button type="submit" className={styles.submit}>
+      <button
+        onClick={() => {
+          setShow(true);
+        }}
+        type="submit"
+        className={styles.submit}
+      >
         Zaloguj się
       </button>
+      <LoginModal show={show} setShow={setShow} />
     </form>
   );
 };

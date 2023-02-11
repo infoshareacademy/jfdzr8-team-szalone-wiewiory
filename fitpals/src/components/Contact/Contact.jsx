@@ -1,11 +1,10 @@
 import styles from "./Contact.module.css";
-import React, { useRef } from "react";
+import React, { useRef, useState } from "react";
 import emailjs from "@emailjs/browser";
+import { ContactModal } from "../Modals/ContactModal/ContactModal";
 
 export const Contact = () => {
-  const myClick = () => {
-    return alert("Wysłano wiadomość, dziękujemy za kontakt !");
-  };
+  const [show, setShow] = useState(false);
   const form = useRef();
 
   const sendEmail = (e) => {
@@ -13,10 +12,10 @@ export const Contact = () => {
 
     emailjs
       .sendForm(
-        "service_w8vwxgk",
-        "template_u0zuym2",
+        "service_pbmemur",
+        "template_6y2i8og",
         form.current,
-        "qpmSdzPgHhjJyv3vt"
+        "kHTz6Ictn6qoypjW-"
       )
       .then(
         (result) => {
@@ -26,6 +25,7 @@ export const Contact = () => {
           console.log(error.text);
         }
       );
+    e.target.reset();
   };
 
   return (
@@ -36,31 +36,38 @@ export const Contact = () => {
           type="text"
           name="user_name"
           className={`${styles.nameInput} ${styles.inputStyle}`}
+          required
         />
         <label className={styles.formLabel}>E-MAIL</label>
         <input
           type="email"
           name="user_email"
           className={`${styles.emailInput} ${styles.inputStyle}`}
+          required
         />
         <label className={styles.formLabel}>WIADOMOŚĆ</label>
         <textarea
           name="message"
           className={`${styles.textarealInput} ${styles.inputStyle}`}
+          required
         />
         <input
           type="submit"
           value="Wyślij"
           className={styles.sendButton}
-          onClick={myClick}
+          onClick={() => {
+            setShow(true);
+            sendEmail();
+          }}
         />
+        <ContactModal show={show} setShow={setShow} />
       </form>
       <article className={styles.contactInformation}>
         <h2 className={styles.companyName}>FITPALS</h2>
         <article className={styles.address}>
           <p>ul. Bootcampowa, pokój 69</p>
           <p>404 City Not-Found</p>
-          <p>e-mail: biuro@fitpals.pl</p>
+          <p>e-mail: biuro.fitpals@gmail.com</p>
           <p>tel. +48 XXX XXX XXX</p>
         </article>
       </article>

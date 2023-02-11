@@ -2,10 +2,12 @@ import { db } from "../../../api/firebase";
 import { addDoc, collection } from "firebase/firestore";
 import { getAuth } from "firebase/auth";
 import styles from "./FormActivities.module.css";
+import React, { useState } from "react";
+import { AddActivityModal } from "../../Modals/AddActivityModal/AddActivityModal";
 
 export const FormActivity = () => {
   const fitpalsCollection = collection(db, "FitPals");
-
+  const [show, setShow] = useState(false);
   const currentUser = window.localStorage.getItem("currentUser");
   console.log("formActivities", currentUser);
 
@@ -109,7 +111,11 @@ export const FormActivity = () => {
           type="submit"
           value="Dodaj aktywność"
           className={styles.submit}
+          onClick={() => {
+            setShow(true);
+          }}
         />
+        <AddActivityModal show={show} setShow={setShow} />
       </form>
     </>
   );
