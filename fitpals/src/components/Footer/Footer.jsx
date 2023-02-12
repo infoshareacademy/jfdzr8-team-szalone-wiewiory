@@ -1,6 +1,6 @@
 import React from "react";
 import styles from "./Footer.module.css";
-import FooterLogo from "../Footer/FooterImages/FitPals.webp";
+import FooterLogo from "../../Assets/FitPalLogo.png";
 import GitHubLogo from "../Footer/FooterImages/GitHubLogo.svg";
 
 export function Footer() {
@@ -24,7 +24,7 @@ export function Footer() {
   );
   const DevList = () => (
     <div className={styles.devContainer}>
-      <h2>DEVELOPERS</h2>
+      <h2>PROGRAMIŚCI</h2>
       <div className={styles.devList}>{devName.map(developer)}</div>
     </div>
   );
