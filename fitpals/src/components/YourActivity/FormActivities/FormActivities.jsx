@@ -1,6 +1,5 @@
 import { db } from "../../../api/firebase";
 import { addDoc, collection } from "firebase/firestore";
-import { getAuth } from "firebase/auth";
 import styles from "./FormActivities.module.css";
 import React, { useState } from "react";
 import { AddActivityModal } from "../../Modals/AddActivityModal/AddActivityModal";
@@ -9,11 +8,6 @@ export const FormActivity = () => {
   const fitpalsCollection = collection(db, "FitPals");
   const [show, setShow] = useState(false);
   const currentUser = window.localStorage.getItem("currentUser");
-  console.log("formActivities", currentUser);
-
-  const auth = getAuth();
-
-  console.log("user", auth.currentUser);
 
   const getFormData = (e) => {
     const form = e.target;

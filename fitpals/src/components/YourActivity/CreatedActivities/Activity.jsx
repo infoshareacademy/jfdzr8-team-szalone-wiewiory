@@ -1,4 +1,6 @@
 import React, { useState } from "react";
+import { CancelEditModal } from "../../Modals/CancelEditModal/CancelEditModal";
+import { EditModal } from "../../Modals/EditModal/EditModal";
 import styles from "./CreatedActivities.module.css";
 
 const Activity = ({
@@ -19,6 +21,8 @@ const Activity = ({
     place: place,
     id: activityId,
   });
+  const [showEditModal, setShowEditModal] = useState(false);
+  const [showCancelEditModal, setShowCancelEditModal] = useState(false);
 
   const handleChange = (e) => {
     e.preventDefault();
@@ -28,6 +32,7 @@ const Activity = ({
   const handleSave = () => {
     updateFitPal(activityId, fitpalData);
     setEditMode(false);
+    setShowEditModal(true);
   };
 
   return (
@@ -35,29 +40,31 @@ const Activity = ({
       {editMode ? (
         <>
           <label htmlFor="date" className={styles.label}>
-            Podaj datę aktywności:
+            Data:
           </label>
-          <div>
-            <input
-              onChange={handleChange}
-              type="date"
-              name="date"
-              id="date"
-              value={fitpalData.date}
-              className={styles.input}
-            />
-            <input
-              onChange={handleChange}
-              type="time"
-              name="time"
-              id="time"
-              value={fitpalData.time}
-              className={styles.input}
-            />
-          </div>
+          <input
+            onChange={handleChange}
+            type="date"
+            name="date"
+            id="date"
+            value={fitpalData.date}
+            className={styles.input}
+          />
+
+          <label htmlFor="time" className={styles.label}>
+            Godzina:
+          </label>
+          <input
+            onChange={handleChange}
+            type="time"
+            name="time"
+            id="time"
+            value={fitpalData.time}
+            className={styles.input}
+          />
 
           <label htmlFor="city" className={styles.label}>
-            Podaj miasto:
+            Miasto:
           </label>
           <input
             onChange={handleChange}
@@ -69,7 +76,7 @@ const Activity = ({
           />
 
           <label htmlFor="place" className={styles.label}>
-            Podaj dokładne miejsce:
+            Miejsce:
           </label>
           <input
             onChange={handleChange}
@@ -79,7 +86,17 @@ const Activity = ({
             value={fitpalData.place}
             className={styles.input}
           />
-          <button onClick={() => setEditMode(false)}>Anuluj</button>
+
+          <p>Aktywność: {activity}</p>
+
+          <button
+            onClick={() => {
+              setEditMode(false);
+              setShowCancelEditModal(true);
+            }}
+          >
+            Anuluj
+          </button>
           <button onClick={handleSave}>Zapisz zmiany</button>
         </>
       ) : (
@@ -95,6 +112,14 @@ const Activity = ({
           <button onClick={() => setEditMode(true)}>Edytuj</button>
         </>
       )}
+      <EditModal
+        showEditModal={showEditModal}
+        setShowEditModal={setShowEditModal}
+      />
+      <CancelEditModal
+        showCancelEditModal={showCancelEditModal}
+        setShowCancelEditModal={setShowCancelEditModal}
+      />
     </>
   );
 };

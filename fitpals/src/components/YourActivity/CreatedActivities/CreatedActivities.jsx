@@ -10,9 +10,14 @@ import {
 } from "firebase/firestore";
 import Activity from "./Activity";
 import styles from "./CreatedActivities.module.css";
+import { DeleteActivityModal } from "../../Modals/DeleteActivity/DeleteActivityModal";
+import { DeleteActivityModalError } from "../../Modals/DeleteActivity/DeleteActivityModalError";
 
 export const CreatedActivities = () => {
   const [fitpals, setFitpals] = useState([]);
+  const [showDeleteActivityModal, setShowDeleteActivityModal] = useState(false);
+  const [showDeleteActivityModalError, setShowDeleteActivityModalError] =
+    useState(false);
   const fitpalsCollection = collection(db, "FitPals");
   const currentUserId = auth?.currentUser?.uid;
 
@@ -38,10 +43,14 @@ export const CreatedActivities = () => {
     }
   };
 
-  const handleDelete = (id) => {
-    const docRef = doc(db, "FitPals", id);
-    deleteDoc(docRef);
-    alert("Czy chcesz aby Twoja aktywność została usunięta?");
+  const handleDelete = async (id) => {
+    try {
+      const docRef = doc(db, "FitPals", id);
+      await deleteDoc(docRef);
+      setShowDeleteActivityModal(true);
+    } catch (e) {
+      setShowDeleteActivityModalError(true);
+    }
   };
 
   useEffect(() => {
@@ -73,6 +82,14 @@ export const CreatedActivities = () => {
           </li>
         ))}
       </ul>
+      <DeleteActivityModal
+        showDeleteActivityModal={showDeleteActivityModal}
+        setShowDeleteActivityModal={setShowDeleteActivityModal}
+      />
+      <DeleteActivityModalError
+        showDeleteActivityModalError={showDeleteActivityModalError}
+        setShowDeleteActivityModalError={setShowDeleteActivityModalError}
+      />
     </>
   );
 };
