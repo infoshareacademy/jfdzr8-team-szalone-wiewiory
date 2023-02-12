@@ -12,28 +12,75 @@ const Activity = ({
   updateFitPal,
 }) => {
   const [editMode, setEditMode] = useState(false);
-  const [document, setDocument] = useState({
+  const [fitpalData, setFitpalData] = useState({
     date: date,
     time: time,
     city: city,
     place: place,
-    activity: activity,
     id: activityId,
   });
 
-  const onChange = (e) => {
+  const handleChange = (e) => {
     e.preventDefault();
+    setFitpalData({ ...fitpalData, [e.target.name]: e.target.value });
+  };
 
-    setDocument({ ...document, [e.target.name]: e.target.value });
+  const handleSave = () => {
+    updateFitPal(activityId, fitpalData);
+    setEditMode(false);
   };
 
   return (
     <>
       {editMode ? (
         <>
-        {/* Tutaj forma */}
+          <label htmlFor="date" className={styles.label}>
+            Podaj datę aktywności:
+          </label>
+          <div>
+            <input
+              onChange={handleChange}
+              type="date"
+              name="date"
+              id="date"
+              value={fitpalData.date}
+              className={styles.input}
+            />
+            <input
+              onChange={handleChange}
+              type="time"
+              name="time"
+              id="time"
+              value={fitpalData.time}
+              className={styles.input}
+            />
+          </div>
+
+          <label htmlFor="city" className={styles.label}>
+            Podaj miasto:
+          </label>
+          <input
+            onChange={handleChange}
+            type="text"
+            name="city"
+            id="city"
+            value={fitpalData.city}
+            className={styles.input}
+          />
+
+          <label htmlFor="place" className={styles.label}>
+            Podaj dokładne miejsce:
+          </label>
+          <input
+            onChange={handleChange}
+            type="text"
+            name="place"
+            id="place"
+            value={fitpalData.place}
+            className={styles.input}
+          />
           <button onClick={() => setEditMode(false)}>Anuluj</button>
-          <button onClick={() => updateFitPal(activityId, document)}>Zapisz zmiany</button>
+          <button onClick={handleSave}>Zapisz zmiany</button>
         </>
       ) : (
         <>

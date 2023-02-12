@@ -30,8 +30,8 @@ export const CreatedActivities = () => {
 
       const updatedDocument = { ...document, ...updatedFitpal };
 
-      if(currentUserId) {
-        await updateDoc(docRef, updatedDocument)
+      if (currentUserId) {
+        await updateDoc(docRef, updatedDocument);
       }
     } catch (e) {
       console.error("An error occured ", e);
@@ -52,7 +52,7 @@ export const CreatedActivities = () => {
       );
       setFitpals(filteredData);
     });
-  }, [currentUserId, fitpalsCollection]);
+  }, [currentUserId]);
 
   return (
     <>
