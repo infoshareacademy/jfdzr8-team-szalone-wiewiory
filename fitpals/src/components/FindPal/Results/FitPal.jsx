@@ -12,7 +12,6 @@ export const FitPal = ({ id, activity, city, date, time, place }) => {
   const [show, setShow] = useState(false);
   const [disable, setDisable] = useState(false);
 
-
   const getFitPals = (querySnapshot) => {
     return querySnapshot.docs.map((doc) => ({
       id: doc.id,
@@ -59,12 +58,16 @@ export const FitPal = ({ id, activity, city, date, time, place }) => {
       <p>
         <b>Miejsce:</b> {place}
       </p>
-      <NavLink to="/joined">
-        <button onClick={() => {
-          setDisable(true);
-          setShow(true);
-          handleOnClick();
-        }}>Dołącz</button>
+      <NavLink to="/my-fitpal">
+        <button
+          onClick={() => {
+            setDisable(true);
+            setShow(true);
+            handleOnClick();
+          }}
+        >
+          Dołącz
+        </button>
       </NavLink>
       <ActivityAdded show={show} setShow={setShow} />
     </div>

@@ -1,12 +1,17 @@
-import { db } from "../../../api/firebase";
+import { db, auth } from "../../../api/firebase";
 import { useState, useEffect } from "react";
-import { collection, onSnapshot, deleteDoc, doc } from "firebase/firestore";
+import {
+  collection,
+  onSnapshot,
+  updateDoc,
+  doc,
+  getDoc,
+} from "firebase/firestore";
 import styles from "./JoinedActivities.module.css";
 
 export const JoinedActivities = () => {
   const [fitpals, setFitpals] = useState([]);
   const fitpalsCollection = collection(db, "FitPals");
-  const currentUser = window.localStorage.getItem("currentUser");
 
   const getFitpals = (querySnapshot) => {
     return querySnapshot.docs.map((doc) => ({
@@ -15,21 +20,36 @@ export const JoinedActivities = () => {
     }));
   };
 
-  const handleDelete = (id) => {
-    const docRef = doc(db, "FitPals", id);
-    deleteDoc(docRef);
-    alert("Czy chcesz aby Twoja aktywność została usunięta?")
+  const currentUserId = auth?.currentUser?.uid;
+
+  const handleUpdate = async (id) => {
+    try {
+      const docRef = doc(db, "/FitPals", id);
+      const document = await getDoc(docRef);
+      let filteredJoinedUsers;
+      if (currentUserId) {
+        filteredJoinedUsers = document
+          .data()
+          .joinedUsers.filter((joinedUserId) => joinedUserId !== currentUserId);
+
+        await updateDoc(docRef, { joinedUsers: filteredJoinedUsers });
+      }
+    } catch (e) {
+      console.error("An error occured ", e);
+    }
   };
 
   useEffect(() => {
     onSnapshot(fitpalsCollection, (querySnapshot) => {
       const data = getFitpals(querySnapshot);
       const filteredData = data.filter((element) =>
-        element.joinedUsers ? element.joinedUsers.includes(currentUser) : null
+        element.joinedUsers
+          ? element.joinedUsers.includes(auth.currentUser.uid)
+          : null
       );
       setFitpals(filteredData);
     });
-  }, [currentUser, fitpalsCollection]);
+  }, [fitpalsCollection]);
 
   return (
     <>
@@ -42,7 +62,7 @@ export const JoinedActivities = () => {
             <p>Miasto: {city}</p>
             <p>Miejsce: {place}</p>
             <p className={styles.activity}>Aktywność: {activity}</p>
-            <button onClick={() =>handleDelete(id)}>Usuń aktywność</button>
+            <button onClick={() => handleUpdate(id)}>Usuń aktywność</button>
           </li>
         ))}
       </ul>
