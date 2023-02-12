@@ -7,7 +7,6 @@ import styles from "./YourActivity.module.css";
 export const YourActivity = () => {
   const [currentTab, setCurrentTab] = useState("1");
   const tabs = [
-
     {
       id: 1,
       tabTitle: "Aktywności Uworzone",
@@ -47,7 +46,7 @@ export const YourActivity = () => {
               {currentTab === `${tab.id}` && (
                 <div>
                   <p className={styles.title}></p>
-                  <p>{tab.content}</p>
+                  <div>{tab.content}</div>
                 </div>
               )}
             </div>

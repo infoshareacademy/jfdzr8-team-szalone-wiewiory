@@ -21,7 +21,6 @@ export const JoinedActivities = () => {
     }));
   };
 
-
   const handleUpdate = async (id) => {
     try {
       const docRef = doc(db, "/FitPals", id);
@@ -43,9 +42,7 @@ export const JoinedActivities = () => {
     onSnapshot(fitpalsCollection, (querySnapshot) => {
       const data = getFitpals(querySnapshot);
       const filteredData = data.filter((element) =>
-        element.joinedUsers
-          ? element.joinedUsers.includes(auth.currentUser.uid)
-          : null
+        element.joinedUsers ? element.joinedUsers.includes(currentUserId) : null
       );
       setFitpals(filteredData);
     });

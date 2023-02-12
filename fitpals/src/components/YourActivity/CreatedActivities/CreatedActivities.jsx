@@ -28,7 +28,7 @@ export const CreatedActivities = () => {
       const docRef = doc(db, "/FitPals", id);
       const document = await getDoc(docRef);
 
-      const updatedDocument = { ...document, ...updatedFitpal };
+      const updatedDocument = { ...document.data(), ...updatedFitpal };
 
       if (currentUserId) {
         await updateDoc(docRef, updatedDocument);
