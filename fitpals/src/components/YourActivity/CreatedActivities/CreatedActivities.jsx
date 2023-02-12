@@ -1,12 +1,20 @@
-import { db } from "../../../api/firebase";
+import { db, auth } from "../../../api/firebase";
 import { useState, useEffect } from "react";
-import { collection, onSnapshot, deleteDoc, doc } from "firebase/firestore";
+import {
+  collection,
+  onSnapshot,
+  deleteDoc,
+  doc,
+  getDoc,
+  updateDoc,
+} from "firebase/firestore";
+import Activity from "./Activity";
 import styles from "./CreatedActivities.module.css";
 
 export const CreatedActivities = () => {
   const [fitpals, setFitpals] = useState([]);
   const fitpalsCollection = collection(db, "FitPals");
-  const currentUser = window.localStorage.getItem("currentUser");
+  const currentUserId = auth?.currentUser?.uid;
 
   const getFitpals = (querySnapshot) => {
     return querySnapshot.docs.map((doc) => ({
@@ -15,21 +23,36 @@ export const CreatedActivities = () => {
     }));
   };
 
+  const handleUpdate = async (id, updatedFitpal) => {
+    try {
+      const docRef = doc(db, "/FitPals", id);
+      const document = await getDoc(docRef);
+
+      const updatedDocument = { ...document, ...updatedFitpal };
+
+      if(currentUserId) {
+        await updateDoc(docRef, updatedDocument)
+      }
+    } catch (e) {
+      console.error("An error occured ", e);
+    }
+  };
+
   const handleDelete = (id) => {
     const docRef = doc(db, "FitPals", id);
     deleteDoc(docRef);
-    alert("Czy chcesz aby Twoja aktywność została usunięta?")
+    alert("Czy chcesz aby Twoja aktywność została usunięta?");
   };
 
   useEffect(() => {
     onSnapshot(fitpalsCollection, (querySnapshot) => {
       const data = getFitpals(querySnapshot);
       const filteredData = data.filter(
-        (element) => element.creator === currentUser
+        (element) => element.creator === currentUserId
       );
       setFitpals(filteredData);
     });
-  }, [currentUser, fitpalsCollection]);
+  }, [currentUserId, fitpalsCollection]);
 
   return (
     <>
@@ -37,12 +60,16 @@ export const CreatedActivities = () => {
       <ul>
         {fitpals.map(({ id, date, time, city, place, activity }) => (
           <li key={id} className={styles.listItem}>
-            <p>Data: {date}</p>
-            <p>Godzina: {time}</p>
-            <p>Miasto: {city}</p>
-            <p>Miejsce: {place}</p>
-            <p className={styles.activity}>Aktywność: {activity}</p>
-            <button onClick={() => handleDelete(id)}>Usuń aktywność</button>
+            <Activity
+              date={date}
+              time={time}
+              city={city}
+              place={place}
+              activity={activity}
+              activityId={id}
+              deleteActivity={handleDelete}
+              updateFitPal={handleUpdate}
+            />
           </li>
         ))}
       </ul>

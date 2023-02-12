@@ -12,6 +12,7 @@ import styles from "./JoinedActivities.module.css";
 export const JoinedActivities = () => {
   const [fitpals, setFitpals] = useState([]);
   const fitpalsCollection = collection(db, "FitPals");
+  const currentUserId = auth?.currentUser?.uid;
 
   const getFitpals = (querySnapshot) => {
     return querySnapshot.docs.map((doc) => ({
@@ -20,7 +21,6 @@ export const JoinedActivities = () => {
     }));
   };
 
-  const currentUserId = auth?.currentUser?.uid;
 
   const handleUpdate = async (id) => {
     try {
