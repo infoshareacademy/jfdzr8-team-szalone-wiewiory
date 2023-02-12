@@ -7,21 +7,16 @@ import { LoginModal } from "../Modals/LoginModal/LoginModal";
 
 export const LoginPage = () => {
   const [show, setShow] = useState(false);
-  const handleLogin = (e) => {
+  const handleLogin = async (e) => {
     e.preventDefault();
     const { email, password } = e.target;
 
-    signInWithEmailAndPassword(auth, email.value, password.value)
-      .then((jwt) => {
-        e.target.reset();
-        const { uid } = jwt.user;
-        window.localStorage.setItem("currentUser", uid);
-        console.log(uid);
-      })
-      .catch((e) => {
-        console.dir(e);
-        alert(firebaseErrors[e.code]);
-      });
+    try {
+      await signInWithEmailAndPassword(auth, email.value, password.value);
+      setShow(true);
+    } catch (e) {
+      alert(firebaseErrors[e.code]);
+    }
   };
   return (
     <form onSubmit={handleLogin} className={styles.form}>
@@ -40,13 +35,7 @@ export const LoginPage = () => {
         className={styles.input}
       />
 
-      <button
-        onClick={() => {
-          setShow(true);
-        }}
-        type="submit"
-        className={styles.submit}
-      >
+      <button type="submit" className={styles.submit}>
         Zaloguj się
       </button>
       <LoginModal show={show} setShow={setShow} />
