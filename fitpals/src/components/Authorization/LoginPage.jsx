@@ -4,6 +4,7 @@ import { firebaseErrors } from "./firebaseErrors";
 import styles from "./RegisterPage.module.css";
 import React, { useState } from "react";
 import { LoginModal } from "../Modals/LoginModal/LoginModal";
+import { NavLink } from "react-router-dom";
 
 export const LoginPage = () => {
   const [show, setShow] = useState(false);
@@ -49,6 +50,7 @@ export const LoginPage = () => {
       >
         Zaloguj się
       </button>
+      <NavLink to="forgotpassword">Przypomnij hasło</NavLink>
       <LoginModal show={show} setShow={setShow} />
     </form>
   );

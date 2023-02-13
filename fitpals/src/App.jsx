@@ -13,7 +13,7 @@ import { AuthContext } from "./components/Authorization/AuthContext";
 import { JoinedActivities } from "./components/YourActivity/JoinedActivities/JoinedActivities";
 import { useEffect, useState } from "react";
 import { auth } from "./api/firebase";
-
+import { ForgotPassword } from "./components/Authorization/ForgotPassword";
 
 function App() {
   const [context, setContext] = useState();
@@ -44,6 +44,7 @@ function App() {
           <Route path="/premium" element={<Premium />} />
           <Route path="/contact" element={<Contact />} />
           <Route path="/register" element={<RegisterPage />} />
+          <Route path="/login/forgotpassword" element={<ForgotPassword />} />
         </Routes>
         <Footer />
       </BrowserRouter>
