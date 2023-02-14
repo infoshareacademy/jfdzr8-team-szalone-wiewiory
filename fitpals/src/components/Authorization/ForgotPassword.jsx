@@ -3,31 +3,33 @@ import { auth } from "../../api/firebase";
 import { getFormData } from "./getFormData";
 import { Form } from "../Authorization/Form";
 // import { firebaseErrors } from "../Authorization/firebaseErrors";
-import { RegisterModal } from "../Modals/RegisterModal/RegisterModal";
+import styles from "./ForgotPassword.module.css";
 import { useState } from "react";
+import { ForgotPasswordModal } from "../Modals/ForgotPasswordModal/ForgotPasswordModal";
 
 export const ForgotPassword = () => {
   const [show, setShow] = useState(false);
+
   const handlePasswordReset = (e) => {
     e.preventDefault();
 
     const { email } = getFormData(e);
-
+    setShow(true);
     sendPasswordResetEmail(auth, email).catch((e) => {
       console.dir(e);
-      setShow(true);
+
       // alert(firebaseErrors[e.code]);
     });
   };
 
   return (
-    <>
+    <div className={styles.forgotPasswordSection}>
       <Form
         submitText="Poproś o przypomnienie hasła"
         onSubmit={handlePasswordReset}
         isPasswordHidden
       />
-      <RegisterModal show={show} setShow={setShow} />;
-    </>
+      <ForgotPasswordModal show={show} setShow={setShow} />
+    </div>
   );
 };

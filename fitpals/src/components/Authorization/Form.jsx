@@ -12,6 +12,7 @@ export const Form = ({ submitText, isPasswordHidden = false, onSubmit }) => (
           name="email"
           id="email"
           className={styles.emailInput}
+          required
         />
       </div>
       {!isPasswordHidden && (
