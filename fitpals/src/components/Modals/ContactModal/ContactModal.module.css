@@ -7,14 +7,14 @@
   margin: 0 auto;
   width: 40vw;
   height: 40vh;
-  background-color: white;
+
   box-shadow: 0 20px 40px -5px;
   position: fixed;
   border-radius: 25px;
   display: flex;
   justify-content: center;
   align-items: center;
-  background: url(../Images/background1.png) no-repeat;
+  background: url(../../../Assets/backrgound-svg.svg) no-repeat;
   background-attachment: fixed;
   background-size: cover;
   background-color: white;
@@ -28,11 +28,13 @@
 
 .modalClose {
   position: absolute;
-  right: 50px;
+  right: 20px;
   top: 20px;
+  width: 30px;
+  font-weight: bold;
 }
 
 .modal h1 {
   text-align: center;
-  color: blue;
+  color: #2f323f;
 }
