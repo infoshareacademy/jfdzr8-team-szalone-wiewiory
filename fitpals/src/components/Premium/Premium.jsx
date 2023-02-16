@@ -14,7 +14,7 @@ export const Premium = () => {
           <li>Weryfikacja użytkowników,</li>
           <li>Dodawanie ocen użytkownikom,</li>
           <li>Korzystanie z naszej bazy danych z fit-przepisami,</li>
-          <li>5% zniżki na karnety w wybranych klubach fitness !.</li>
+          <li>5% zniżki na karnety w wybranych klubach fitness !</li>
         </ul>
       </article>
     </div>
