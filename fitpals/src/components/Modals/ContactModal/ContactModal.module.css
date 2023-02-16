@@ -28,10 +28,12 @@
 
 .modalClose {
   position: absolute;
-  right: 20px;
+  right: 40px;
   top: 20px;
   width: 30px;
   font-weight: bold;
+  border: none;
+  background-color: #fff;
 }
 
 .modal h1 {
