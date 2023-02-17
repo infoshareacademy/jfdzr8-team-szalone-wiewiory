@@ -1,10 +1,10 @@
 .premiumContainer {
   background: url(../../Assets/backrgound-svg-svg1.svg) no-repeat;
-  background-size: cover;
+  background-attachment: cover;
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 37em;
+  height: 50em;
 }
 
 .articleContainer {
