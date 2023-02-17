@@ -47,14 +47,14 @@ export const FormActivity = () => {
             name="date"
             id="date"
             required
-            className={styles.input}
+            className={styles.dateInput}
           />
           <input
             type="time"
             name="time"
             id="time"
             required
-            className={styles.input}
+            className={styles.timeInput}
           />
         </div>
 
@@ -101,14 +101,15 @@ export const FormActivity = () => {
           <option value="Boks">Boks</option>
         </select>
 
-        <input
+        <button
           type="submit"
-          value="Dodaj aktywność"
-          className={styles.submit}
+          className={styles.button}
           onClick={() => {
             setShow(true);
           }}
-        />
+        >
+          Dodaj aktywność
+        </button>
         <AddActivityModal show={show} setShow={setShow} />
       </form>
     </>
