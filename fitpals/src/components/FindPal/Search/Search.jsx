@@ -22,25 +22,26 @@ export const Search = ({ setSearchData }) => {
   return (
     <div className={styles.wrapper}>
       <form onSubmit={getFormData} className={styles.formStyling}>
-        {/* <h2 className={styles.formHeading}>Wyszukaj swojego FitPala !</h2> */}
         <div className={styles.forms}>
           <label htmlFor="date" className={styles.titles}>
             Data aktywności:
           </label>
-          <input
-            ref={input}
-            type="date"
-            name="date"
-            id="date"
-            className={`${styles.formsInput} ${styles.dateInput}`}
-          />
-          <input
-            ref={input}
-            type="time"
-            name="time"
-            id="time"
-            className={`${styles.formsInput} ${styles.timeInput}`}
-          />
+          <div>
+            <input
+              ref={input}
+              type="date"
+              name="date"
+              id="date"
+              className={`${styles.formsInput} ${styles.dateInput}`}
+            />
+            <input
+              ref={input}
+              type="time"
+              name="time"
+              id="time"
+              className={`${styles.formsInput} ${styles.timeInput}`}
+            />
+          </div>
         </div>
         <div className={styles.forms}>
           <label htmlFor="city" className={styles.titles}>

@@ -15,7 +15,7 @@
 }
 
 .titles {
-  margin: 15px;
+  margin: 10px;
   font-weight: 600;
   display: flex;
   justify-content: center;
@@ -24,14 +24,15 @@
 }
 
 .submit {
-  margin: 15px;
+  margin: 20px;
   width: 200px;
   height: 40px;
   border: 2px solid #2c8758;
   background-color: #97ebc0;
   border-radius: 30px;
   color: #2f323f;
-  font-weight: 700;
+  font-weight: 600;
+  font-size: 15px;
 }
 
 .submit:hover {
