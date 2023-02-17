@@ -2,16 +2,21 @@
   border-radius: 30px;
   background-color: #97ebc0;
   min-height: 40px;
-  min-width: 150px;
+  min-width: 200px;
   font-size: 12px;
   color: #000;
   margin: 5px;
   border: 2px solid #2c8758;
 }
 
+.button:hover {
+  background-color: #fff;
+  transition: 0.7s;
+}
+
 .input {
   min-height: 40px;
-  min-width: 150px;
+  min-width: 200px;
 }
 
 .activityBox {
@@ -33,5 +38,7 @@
   background-color: #2f323f;
   display: flex;
   flex-direction: column;
-  color: #fff;
+  color: #4adc91;
+  font-weight: 600;
+  align-items: center;
 }

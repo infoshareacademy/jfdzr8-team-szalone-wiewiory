@@ -9,7 +9,7 @@ export const YourActivity = () => {
   const tabs = [
     {
       id: 1,
-      tabTitle: "Aktywności Uworzone",
+      tabTitle: "Aktywności utworzone",
       content: <CreatedActivities />,
     },
 
