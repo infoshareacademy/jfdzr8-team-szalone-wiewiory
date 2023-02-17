@@ -66,7 +66,7 @@ export const CreatedActivities = () => {
   return (
     <>
       <h2 className={styles.heading}>Aktywności utworzone przez Ciebie</h2>
-      <ul>
+      <ul className={styles.listBoxes}>
         {fitpals.map(({ id, date, time, city, place, activity }) => (
           <li key={id} className={styles.listItem}>
             <Activity

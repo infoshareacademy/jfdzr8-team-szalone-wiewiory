@@ -5,13 +5,12 @@
 }
 
 .listItem {
-  text-align: center;
-  margin: 0.5rem;
-  padding: 0.5rem;
-  background-color: rgb(241, 238, 238);
   list-style: none;
+  display: flex;
+  flex-direction: column;
 }
 
-.activity {
-  text-transform: uppercase;
+.listBoxes {
+  display: flex;
+  flex-wrap: wrap;
 }

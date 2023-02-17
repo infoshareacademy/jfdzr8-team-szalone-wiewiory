@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { CancelEditModal } from "../../Modals/CancelEditModal/CancelEditModal";
 import { EditModal } from "../../Modals/EditModal/EditModal";
-import styles from "./CreatedActivities.module.css";
+import styles from "./Activity.module.css";
 
 const Activity = ({
   date,
@@ -38,7 +38,7 @@ const Activity = ({
   return (
     <>
       {editMode ? (
-        <>
+        <div className={styles.activeEditBox}>
           <label htmlFor="date" className={styles.label}>
             Data:
           </label>
@@ -90,6 +90,7 @@ const Activity = ({
           <p>Aktywność: {activity}</p>
 
           <button
+            className={styles.button}
             onClick={() => {
               setEditMode(false);
               setShowCancelEditModal(true);
@@ -97,20 +98,27 @@ const Activity = ({
           >
             Anuluj
           </button>
-          <button onClick={handleSave}>Zapisz zmiany</button>
-        </>
+          <button className={styles.button} onClick={handleSave}>
+            Zapisz zmiany
+          </button>
+        </div>
       ) : (
-        <>
+        <div className={styles.activityBox}>
           <p>Data: {date}</p>
           <p>Godzina: {time}</p>
           <p>Miasto: {city}</p>
           <p>Miejsce: {place}</p>
-          <p className={styles.activity}>Aktywność: {activity}</p>
-          <button onClick={() => deleteActivity(activityId)}>
+          <p>Aktywność: {activity}</p>
+          <button
+            className={styles.button}
+            onClick={() => deleteActivity(activityId)}
+          >
             Usuń aktywność
           </button>
-          <button onClick={() => setEditMode(true)}>Edytuj</button>
-        </>
+          <button className={styles.button} onClick={() => setEditMode(true)}>
+            Edytuj
+          </button>
+        </div>
       )}
       <EditModal
         showEditModal={showEditModal}
