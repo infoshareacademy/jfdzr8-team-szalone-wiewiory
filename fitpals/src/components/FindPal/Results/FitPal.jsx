@@ -2,8 +2,8 @@ import { collection, onSnapshot, updateDoc, doc } from "firebase/firestore";
 import React, { useRef, useEffect, useState } from "react";
 import { db } from "../../../api/firebase";
 import { ActivityAdded } from "../../Modals/ActivityAdded/ActivityAdded";
-import styles from "./Results.module.css";
 import { NavLink } from "react-router-dom";
+import styles from "./Results.module.css";
 
 export const FitPal = ({ id, activity, city, date, time, place }) => {
   const fitpal = useRef({});
@@ -58,18 +58,22 @@ export const FitPal = ({ id, activity, city, date, time, place }) => {
       <p>
         <b>Miejsce:</b> {place}
       </p>
-      <NavLink to="/my-fitpal">
-        <button
-          onClick={() => {
-            setDisable(true);
-            setShow(true);
-            handleOnClick();
-          }}
-        >
-          Dołącz
-        </button>
-      </NavLink>
-      <ActivityAdded show={show} setShow={setShow} />
+
+      <div>
+        <NavLink to="/my-fitpal">
+          <button
+            className={styles.submit}
+            onClick={() => {
+              setDisable(true);
+              setShow(true);
+              handleOnClick();
+            }}
+          >
+            Dołącz
+          </button>
+        </NavLink>
+        <ActivityAdded show={show} setShow={setShow} />
+      </div>
     </div>
   );
 };
