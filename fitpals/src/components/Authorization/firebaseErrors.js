@@ -7,4 +7,5 @@ export const firebaseErrors = {
   "auth/wrong-password": "Provided wrong password",
   "auth/network-request-failed":
     "Something went wrong... Check you internet connection.",
+  "auth/missing-email": "Wpisz poprawny e-mail",
 };
