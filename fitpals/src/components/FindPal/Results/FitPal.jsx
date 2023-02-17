@@ -3,7 +3,6 @@ import React, { useRef, useEffect, useState } from "react";
 import { db } from "../../../api/firebase";
 import { ActivityAdded } from "../../Modals/ActivityAdded/ActivityAdded";
 import styles from "./Results.module.css";
-import { NavLink } from "react-router-dom";
 
 export const FitPal = ({ id, activity, city, date, time, place }) => {
   const fitpal = useRef({});
@@ -58,17 +57,15 @@ export const FitPal = ({ id, activity, city, date, time, place }) => {
       <p>
         <b>Miejsce:</b> {place}
       </p>
-      <NavLink to="/my-fitpal">
-        <button
-          onClick={() => {
-            setDisable(true);
-            setShow(true);
-            handleOnClick();
-          }}
-        >
-          Dołącz
-        </button>
-      </NavLink>
+      <button
+        onClick={() => {
+          setDisable(true);
+          setShow(true);
+          handleOnClick();
+        }}
+      >
+        Dołącz
+      </button>
       <ActivityAdded show={show} setShow={setShow} />
     </div>
   );
