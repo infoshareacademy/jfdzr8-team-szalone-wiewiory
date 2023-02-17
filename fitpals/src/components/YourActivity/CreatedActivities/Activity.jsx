@@ -1,5 +1,7 @@
 import React, { useState } from "react";
-import styles from "./CreatedActivities.module.css";
+import { CancelEditModal } from "../../Modals/CancelEditModal/CancelEditModal";
+import { EditModal } from "../../Modals/EditModal/EditModal";
+import styles from "./Activity.module.css";
 
 const Activity = ({
   date,
@@ -12,42 +14,120 @@ const Activity = ({
   updateFitPal,
 }) => {
   const [editMode, setEditMode] = useState(false);
-  const [document, setDocument] = useState({
+  const [fitpalData, setFitpalData] = useState({
     date: date,
     time: time,
     city: city,
     place: place,
-    activity: activity,
     id: activityId,
   });
+  const [showEditModal, setShowEditModal] = useState(false);
+  const [showCancelEditModal, setShowCancelEditModal] = useState(false);
 
-  const onChange = (e) => {
+  const handleChange = (e) => {
     e.preventDefault();
+    setFitpalData({ ...fitpalData, [e.target.name]: e.target.value });
+  };
 
-    setDocument({ ...document, [e.target.name]: e.target.value });
+  const handleSave = () => {
+    updateFitPal(activityId, fitpalData);
+    setEditMode(false);
+    setShowEditModal(true);
   };
 
   return (
     <>
       {editMode ? (
-        <>
-        {/* Tutaj forma */}
-          <button onClick={() => setEditMode(false)}>Anuluj</button>
-          <button onClick={() => updateFitPal(activityId, document)}>Zapisz zmiany</button>
-        </>
+        <div className={styles.activeEditBox}>
+          <label htmlFor="date" className={styles.label}>
+            Data:
+          </label>
+          <input
+            onChange={handleChange}
+            type="date"
+            name="date"
+            id="date"
+            value={fitpalData.date}
+            className={styles.input}
+          />
+
+          <label htmlFor="time" className={styles.label}>
+            Godzina:
+          </label>
+          <input
+            onChange={handleChange}
+            type="time"
+            name="time"
+            id="time"
+            value={fitpalData.time}
+            className={styles.input}
+          />
+
+          <label htmlFor="city" className={styles.label}>
+            Miasto:
+          </label>
+          <input
+            onChange={handleChange}
+            type="text"
+            name="city"
+            id="city"
+            value={fitpalData.city}
+            className={styles.input}
+          />
+
+          <label htmlFor="place" className={styles.label}>
+            Miejsce:
+          </label>
+          <input
+            onChange={handleChange}
+            type="text"
+            name="place"
+            id="place"
+            value={fitpalData.place}
+            className={styles.input}
+          />
+
+          <p>Aktywność: {activity}</p>
+
+          <button
+            className={styles.button}
+            onClick={() => {
+              setEditMode(false);
+              setShowCancelEditModal(true);
+            }}
+          >
+            Anuluj
+          </button>
+          <button className={styles.button} onClick={handleSave}>
+            Zapisz zmiany
+          </button>
+        </div>
       ) : (
-        <>
+        <div className={styles.activityBox}>
           <p>Data: {date}</p>
           <p>Godzina: {time}</p>
           <p>Miasto: {city}</p>
           <p>Miejsce: {place}</p>
-          <p className={styles.activity}>Aktywność: {activity}</p>
-          <button onClick={() => deleteActivity(activityId)}>
+          <p>Aktywność: {activity}</p>
+          <button
+            className={styles.button}
+            onClick={() => deleteActivity(activityId)}
+          >
             Usuń aktywność
           </button>
-          <button onClick={() => setEditMode(true)}>Edytuj</button>
-        </>
+          <button className={styles.button} onClick={() => setEditMode(true)}>
+            Edytuj
+          </button>
+        </div>
       )}
+      <EditModal
+        showEditModal={showEditModal}
+        setShowEditModal={setShowEditModal}
+      />
+      <CancelEditModal
+        showCancelEditModal={showCancelEditModal}
+        setShowCancelEditModal={setShowCancelEditModal}
+      />
     </>
   );
 };

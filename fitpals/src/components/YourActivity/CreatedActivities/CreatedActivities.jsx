@@ -10,9 +10,14 @@ import {
 } from "firebase/firestore";
 import Activity from "./Activity";
 import styles from "./CreatedActivities.module.css";
+import { DeleteActivityModal } from "../../Modals/DeleteActivity/DeleteActivityModal";
+import { DeleteActivityModalError } from "../../Modals/DeleteActivity/DeleteActivityModalError";
 
 export const CreatedActivities = () => {
   const [fitpals, setFitpals] = useState([]);
+  const [showDeleteActivityModal, setShowDeleteActivityModal] = useState(false);
+  const [showDeleteActivityModalError, setShowDeleteActivityModalError] =
+    useState(false);
   const fitpalsCollection = collection(db, "FitPals");
   const currentUserId = auth?.currentUser?.uid;
 
@@ -28,20 +33,24 @@ export const CreatedActivities = () => {
       const docRef = doc(db, "/FitPals", id);
       const document = await getDoc(docRef);
 
-      const updatedDocument = { ...document, ...updatedFitpal };
+      const updatedDocument = { ...document.data(), ...updatedFitpal };
 
-      if(currentUserId) {
-        await updateDoc(docRef, updatedDocument)
+      if (currentUserId) {
+        await updateDoc(docRef, updatedDocument);
       }
     } catch (e) {
       console.error("An error occured ", e);
     }
   };
 
-  const handleDelete = (id) => {
-    const docRef = doc(db, "FitPals", id);
-    deleteDoc(docRef);
-    alert("Czy chcesz aby Twoja aktywność została usunięta?");
+  const handleDelete = async (id) => {
+    try {
+      const docRef = doc(db, "FitPals", id);
+      await deleteDoc(docRef);
+      setShowDeleteActivityModal(true);
+    } catch (e) {
+      setShowDeleteActivityModalError(true);
+    }
   };
 
   useEffect(() => {
@@ -52,12 +61,12 @@ export const CreatedActivities = () => {
       );
       setFitpals(filteredData);
     });
-  }, [currentUserId, fitpalsCollection]);
+  }, [currentUserId]);
 
   return (
     <>
       <h2 className={styles.heading}>Aktywności utworzone przez Ciebie</h2>
-      <ul>
+      <ul className={styles.listBoxes}>
         {fitpals.map(({ id, date, time, city, place, activity }) => (
           <li key={id} className={styles.listItem}>
             <Activity
@@ -73,6 +82,14 @@ export const CreatedActivities = () => {
           </li>
         ))}
       </ul>
+      <DeleteActivityModal
+        showDeleteActivityModal={showDeleteActivityModal}
+        setShowDeleteActivityModal={setShowDeleteActivityModal}
+      />
+      <DeleteActivityModalError
+        showDeleteActivityModalError={showDeleteActivityModalError}
+        setShowDeleteActivityModalError={setShowDeleteActivityModalError}
+      />
     </>
   );
 };
