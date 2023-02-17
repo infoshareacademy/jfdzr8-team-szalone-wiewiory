@@ -14,7 +14,6 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  background: url(../Images/background1.png) no-repeat;
   background-attachment: fixed;
   background-size: cover;
   background-color: white;
@@ -28,11 +27,18 @@
 
 .modalClose {
   position: absolute;
-  right: 50px;
+  right: 30px;
   top: 20px;
+  width: 30px;
+  font-weight: bold;
+  border: none;
+  background-color: #fff;
+}
+.cancelButton {
+  width: 30px;
 }
 
 .modal h1 {
   text-align: center;
-  color: blue;
+  color: #2f323f;
 }

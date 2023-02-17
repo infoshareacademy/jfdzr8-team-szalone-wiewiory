@@ -1,6 +1,7 @@
 import React from "react";
 import styles from "./ContactModal.module.css";
 import Logo from "../../Images/FitPalLogo.png";
+import CancelButton from "../../../Assets/cancel button.svg";
 
 export const ContactModal = ({ show, setShow }) => {
   const content = show && (
@@ -10,7 +11,11 @@ export const ContactModal = ({ show, setShow }) => {
         type="button"
         onClick={() => setShow(false)}
       >
-        X
+        <img
+          src={CancelButton}
+          alt="cancel button"
+          className={styles.cancelButton}
+        />
       </button>
       <h1>Dziękujemy, wiadomość została wysłana !</h1>
       <img src={Logo} alt="logo of company" className={styles.logo} />

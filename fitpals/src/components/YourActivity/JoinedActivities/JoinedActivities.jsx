@@ -8,10 +8,12 @@ import {
   getDoc,
 } from "firebase/firestore";
 import styles from "./JoinedActivities.module.css";
+import { UpdateModal } from "../../Modals/UpdateModal/UpdateModal";
 
 export const JoinedActivities = () => {
   const [fitpals, setFitpals] = useState([]);
   const fitpalsCollection = collection(db, "FitPals");
+  const [show, setShow] = useState(false);
   const currentUserId = auth?.currentUser?.uid;
 
   const getFitpals = (querySnapshot) => {
@@ -59,11 +61,18 @@ export const JoinedActivities = () => {
             <p>Miasto: {city}</p>
             <p>Miejsce: {place}</p>
             <p>Aktywność: {activity}</p>
-            <button className={styles.button} onClick={() => handleUpdate(id)}>
+            <button
+              className={styles.button}
+              onClick={() => {
+                handleUpdate(id);
+                setShow(true);
+              }}
+            >
               Usuń aktywność
             </button>
           </li>
         ))}
+        <UpdateModal show={show} setShow={setShow} />
       </ul>
     </>
   );
