@@ -65,7 +65,7 @@ export const Contact = () => {
       </form>
       <div>
         <article className={styles.contactInformation}>
-          <h2 className={styles.companyName}>FITPALS</h2>
+          <h2 className={styles.companyName}>FITPAL</h2>
           <article className={styles.address}>
             <p>ul. Bootcampowa, pokój 69</p>
             <p>404 City Not-Found</p>
