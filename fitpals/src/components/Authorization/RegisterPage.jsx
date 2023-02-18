@@ -6,11 +6,13 @@ import { addDoc, collection } from "firebase/firestore";
 import React, { useState } from "react";
 import { RegisterModal } from "../Modals/RegisterModal/RegisterModal";
 import { LoginRegisterErrorModal } from "../Modals/LoginRegisterErrorModal/LoginRegisterErrorModal";
+import { EmailInUseModal } from "../Modals/EmailInUseModal/EmailInUseModal";
 
 export const RegisterPage = () => {
   const usersCollection = collection(db, "Users");
   const [show, setShow] = useState(false);
   const [showError, setShowError] = useState(false);
+  const [emailInUse, setEmailInUse] = useState(false);
   const handleRegister = async (e) => {
     e.preventDefault();
     const { email, password } = e.target;
@@ -28,7 +30,11 @@ export const RegisterPage = () => {
         UUID: user.uid,
       });
     } catch (e) {
-      setShowError(true);
+      if (e.code === "auth/email-already-in-use") {
+        setEmailInUse(true);
+      } else {
+        setShowError(true);
+      }
     }
     e.target.reset();
     signOut(auth);
@@ -60,6 +66,7 @@ export const RegisterPage = () => {
           showError={showError}
           setShowError={setShowError}
         />
+        <EmailInUseModal show={emailInUse} setShow={setEmailInUse} />
       </form>
     </div>
   );

@@ -31,7 +31,7 @@
   margin: 4rem;
   line-height: 2rem;
   text-align-last: center;
-  text-shadow: #59b686 1px 0 10px;
+  /* text-shadow: #59b686 1px 0 10px; */
 }
 
 .swiper {
@@ -117,12 +117,12 @@
 .blockTextFit {
   margin-right: 10rem;
   text-align: center;
-  text-shadow: #59b686 1px 0 10px;
+  /* text-shadow: #59b686 1px 0 10px; */
 }
 
 .blockTextRun {
   margin-left: 10rem;
-  text-shadow: #59b686 1px 0 10px;
+  /* text-shadow: #59b686 1px 0 10px; */
 }
 
 .fitnessImg {
