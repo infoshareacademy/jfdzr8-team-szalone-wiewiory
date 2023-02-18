@@ -1,9 +1,8 @@
 .modal {
   padding: 70px 80px 0;
   top: 50%;
-  transform: translateY(-50%);
-  left: 0;
-  right: 0;
+  left: 50%;
+  transform: translate(-50%, -50%);
   margin: 0 auto;
   width: 40vw;
   height: 40vh;
