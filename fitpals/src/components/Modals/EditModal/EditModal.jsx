@@ -1,5 +1,6 @@
 import React from "react";
-import styles from "./EditModal.module.css";
+// import styles from "./UpdateModal.module.css";
+import styles from "../../Modals/Modals.module.css";
 import Logo from "../../Images/FitPalLogo.png";
 import CancelButton from "../../../Assets/cancel button.svg";
 

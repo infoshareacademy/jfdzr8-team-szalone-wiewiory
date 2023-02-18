@@ -1,13 +1,15 @@
 import { signInWithEmailAndPassword } from "firebase/auth";
 import { auth } from "../../api/firebase";
-import { firebaseErrors } from "./firebaseErrors";
+// import { firebaseErrors } from "./firebaseErrors";
 import styles from "./LoginPage.module.css";
 import React, { useState } from "react";
 import { LoginModal } from "../Modals/LoginModal/LoginModal";
 import { NavLink } from "react-router-dom";
+import { LoginRegisterErrorModal } from "../Modals/LoginRegisterErrorModal/LoginRegisterErrorModal";
 
 export const LoginPage = () => {
   const [show, setShow] = useState(false);
+  const [showError, setShowError] = useState(false);
   const handleLogin = async (e) => {
     e.preventDefault();
     const { email, password } = e.target;
@@ -16,7 +18,7 @@ export const LoginPage = () => {
       await signInWithEmailAndPassword(auth, email.value, password.value);
       setShow(true);
     } catch (e) {
-      alert(firebaseErrors[e.code]);
+      setShowError(true);
     }
   };
   return (
@@ -45,6 +47,10 @@ export const LoginPage = () => {
           Przypomnij hasło
         </NavLink>
         <LoginModal show={show} setShow={setShow} />
+        <LoginRegisterErrorModal
+          showError={showError}
+          setShowError={setShowError}
+        />
       </form>
     </div>
   );
