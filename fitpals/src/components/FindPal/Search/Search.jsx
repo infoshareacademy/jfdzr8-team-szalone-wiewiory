@@ -22,29 +22,30 @@ export const Search = ({ setSearchData }) => {
   return (
     <div className={styles.wrapper}>
       <form onSubmit={getFormData} className={styles.formStyling}>
-        <h2 className={styles.formHeading}>Wyszukaj swojego FitPala !</h2>
         <div className={styles.forms}>
           <label htmlFor="date" className={styles.titles}>
-            Podaj datę aktywności:
+            Data aktywności:
           </label>
-          <input
-            ref={input}
-            type="date"
-            name="date"
-            id="date"
-            className={`${styles.formsInput} ${styles.dateInput}`}
-          />
-          <input
-            ref={input}
-            type="time"
-            name="time"
-            id="time"
-            className={`${styles.formsInput} ${styles.timeInput}`}
-          />
+          <div>
+            <input
+              ref={input}
+              type="date"
+              name="date"
+              id="date"
+              className={`${styles.formsInput} ${styles.dateInput}`}
+            />
+            <input
+              ref={input}
+              type="time"
+              name="time"
+              id="time"
+              className={`${styles.formsInput} ${styles.timeInput}`}
+            />
+          </div>
         </div>
         <div className={styles.forms}>
           <label htmlFor="city" className={styles.titles}>
-            Podaj miejscowość:
+            Miejscowość:
           </label>
           <input
             ref={input}
@@ -56,7 +57,7 @@ export const Search = ({ setSearchData }) => {
         </div>
         <div className={styles.selectionInput}>
           <label htmlFor="activity" className={styles.titles}>
-            Wybierz rodzaj aktywności:
+            Aktywność:
           </label>
           <select
             ref={input}

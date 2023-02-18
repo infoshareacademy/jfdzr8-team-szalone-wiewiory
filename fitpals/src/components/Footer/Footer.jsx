@@ -37,7 +37,7 @@ export function Footer() {
         className={styles.footerLogo}
       />
       <article className={styles.footerOption}>
-        <p className={styles.footerTitle}>FITPALS</p>
+        <p className={styles.footerTitle}>FITPAL</p>
         <p>ul. Bootcampowa, pokój 69</p>
         <p>404 City Not-Found</p>
         <p>e-mail: biuro.fitpals@gmail.com</p>
