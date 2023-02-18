@@ -2,7 +2,7 @@
   position: sticky;
   top: 0;
   background-color: #c0f3d9;
-  z-index: 1;
+  z-index: 200;
   width: 100%;
   height: 80px;
   display: flex;
@@ -21,7 +21,7 @@
 }
 
 .navItemPosition {
-  margin-right: 100px;
+  margin-right: 500px;
 }
 
 .navLink {

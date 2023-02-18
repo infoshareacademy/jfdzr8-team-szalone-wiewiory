@@ -24,7 +24,7 @@ export const RegisterPage = () => {
         password.value
       );
       setShow(true);
-      console.log(user);
+
       await addDoc(usersCollection, {
         Email: user.email,
         UUID: user.uid,

@@ -1,6 +1,5 @@
 import { signInWithEmailAndPassword } from "firebase/auth";
 import { auth } from "../../api/firebase";
-// import { firebaseErrors } from "./firebaseErrors";
 import styles from "./LoginPage.module.css";
 import React, { useState } from "react";
 import { LoginModal } from "../Modals/LoginModal/LoginModal";

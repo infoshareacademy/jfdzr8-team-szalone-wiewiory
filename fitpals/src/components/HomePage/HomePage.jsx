@@ -11,7 +11,6 @@ import img4 from "../../Assets/SliderImg/sport4.jpg";
 import img5 from "../../Assets/SliderImg/sport5.jpg";
 import img6 from "../../Assets/SliderImg/fitness1.png";
 import img7 from "../../Assets/SliderImg/running1.jpg";
-
 import icon1 from "../../Assets/Icons/Tennis.png";
 import icon2 from "../../Assets/Icons/Swimming.png";
 import icon3 from "../../Assets/Icons/Running.png";
@@ -21,7 +20,6 @@ import icon6 from "../../Assets/Icons/Basket.png";
 import icon7 from "../../Assets/Icons/Climbing.png";
 import icon8 from "../../Assets/Icons/Box.png";
 import icon9 from "../../Assets/Icons/Hiking.png";
-import FitPalLogo from "../../Assets/FitPalLogo.png";
 
 import styles from "./HomePage.module.css";
 
@@ -32,7 +30,6 @@ export const HomePage = () => {
         <div className={styles.backgroundImage}>
           <div className={styles.sideFlex}>
             <h1 className={styles.homePageTitle}>FITPAL</h1>
-
             <p className={styles.homePageText}>
               Fitpal działa od 15 lat, skorzystało z niego ponad 200000 osób.
               Jesteś tu bezpieczny - profile są indywidualnie weryfikowane,
