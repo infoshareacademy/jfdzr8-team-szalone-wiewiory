@@ -4,13 +4,13 @@ import styles from "../../Modals/Modals.module.css";
 import Logo from "../../Images/FitPalLogo.png";
 import CancelButton from "../../../Assets/cancel button.svg";
 
-export const ContactModal = ({ show, setShow }) => {
-  const content = show && (
+export const LoginRegisterErrorModal = ({ showError, setShowError }) => {
+  const content = showError && (
     <div className={styles.modal}>
       <button
         className={styles.modalClose}
         type="button"
-        onClick={() => setShow(false)}
+        onClick={() => setShowError(false)}
       >
         <img
           src={CancelButton}
@@ -18,7 +18,7 @@ export const ContactModal = ({ show, setShow }) => {
           className={styles.cancelButton}
         />
       </button>
-      <h1>Dziękujemy, wiadomość została wysłana !</h1>
+      <h1>Podaj e-mail oraz hasło !</h1>
       <img src={Logo} alt="logo of company" className={styles.logo} />
     </div>
   );
