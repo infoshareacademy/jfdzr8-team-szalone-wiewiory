@@ -2,14 +2,15 @@ import { NavLink } from "react-router-dom";
 import styles from "./Navbar.module.css";
 import { signOut } from "firebase/auth";
 import { auth } from "../../api/firebase";
+import FitPalLogo from "../../Assets/FitPalLogo.png";
 
 export const Navbar = ({ isAuth }) => {
   return (
     <nav className={styles.wrapper}>
       <ul className={styles.navBox}>
         <li>
-          <NavLink to="/" className={styles.navLink}>
-            logo
+          <NavLink to="/" className={styles.navLinkLogo}>
+            <img src={FitPalLogo} className={styles.navbarLogo} alt="" />
           </NavLink>
         </li>
         <li>
@@ -17,13 +18,11 @@ export const Navbar = ({ isAuth }) => {
             Znajdź FitPala
           </NavLink>
         </li>
-        {isAuth && (
-          <li>
-            <NavLink to="/my-fitpal" className={styles.navLink}>
-              Moje FitPale
-            </NavLink>
-          </li>
-        )}
+        <li>
+          <NavLink to="/my-fitpal" className={styles.navLink}>
+            Moje FitPale
+          </NavLink>
+        </li>
         <li>
           <NavLink to="/premium" className={styles.navLink}>
             Premium
@@ -38,12 +37,12 @@ export const Navbar = ({ isAuth }) => {
           <>
             <li>
               <NavLink to="/login" className={styles.navLink}>
-                <button>Zaloguj się</button>
+                <button className={styles.button}>Zaloguj się</button>
               </NavLink>
             </li>
             <li>
               <NavLink to="/register" className={styles.navLink}>
-                <button>Zarejestruj się</button>
+                <button className={styles.button}>Zarejestruj się</button>
               </NavLink>
             </li>
           </>
@@ -51,7 +50,9 @@ export const Navbar = ({ isAuth }) => {
         {isAuth && (
           <li>
             <NavLink to="/" className={styles.navLink}>
-              <button onClick={() => signOut(auth)}>Wyloguj się</button>
+              <button className={styles.button} onClick={() => signOut(auth)}>
+                Wyloguj się
+              </button>
             </NavLink>
           </li>
         )}

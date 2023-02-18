@@ -1,15 +1,20 @@
 .wrapper {
-  width: 100vw;
+  position: sticky;
+  top: 0;
+  background-color: #c0f3d9;
+  z-index: 1;
+  width: 100%;
+
 }
 
 .navBox {
   display: flex;
   list-style-type: none;
-  background-color: rgb(248, 165, 12);
   justify-content: space-around;
-  align-content: flex-start;
+  align-items: center;
+  align-content: center;
   flex-wrap: wrap;
-  padding: 20px;
+  text-align: center;
 }
 
 .navItemPosition {
@@ -17,14 +22,56 @@
 }
 
 .navLink {
-  color: white;
+  color: #2c8758;
   font-weight: 500;
   text-decoration: none;
+  padding: 11px;
+  
+}
+
+.navLink:hover {
+  color: #2f323f;
 }
 
 .navLink:focus {
   text-decoration: none;
   font-weight: 600;
-  background-color: rgb(226, 157, 78);
-  color: azure;
+  background-color: #2c8758;
+  color: #fff;
+  border-radius: 30px;
+  font-weight: bold;
+  height: 40px;
+  width: 200px;
+  margin: 3em 0 3em 0;
+  box-shadow: 0px 0px 2px 2px rgb(0, 0, 0);
+}
+
+.navbarLogo {
+  height: 10em;
+  position: relative;
+  z-index: 1;
+}
+
+.button {
+  display: inline-block;
+  height: 40px;
+  width: 200px;
+  margin: 2em 0 2em 0;
+  background-color: #97ebc0;
+  color: #2f323f;
+  font-weight: bold;
+  border: none;
+  border-radius: 30px;
+  box-shadow: 0px 0px 2px 2px #2f323f;
+  cursor: pointer;
+}
+
+.button:hover {
+  background-color: #fff;
+  color: #2f323f;
+  box-shadow: 0px 0px 2px 2px rgb(0, 0, 0);
+}
+
+.button:active {
+  background-color: #2c8758;
 }
