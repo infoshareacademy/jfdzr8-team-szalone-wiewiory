@@ -1,8 +1,13 @@
 h1 {
-  color: white;
   font-weight: 500;
   text-align: center;
   margin: 60px 0;
+}
+
+.mainSection {
+  background: url(../../Assets/backgroundYourActivity.svg) no-repeat;
+  background-attachment: cover;
+  background-position: center bottom;
 }
 
 .container {
@@ -17,23 +22,23 @@ h1 {
 
 .tabs button {
   background-color: lightgray;
-  border: none;
-  color: #888888;
+  border: 2px solid #59b686;
+  color: #000;
   cursor: pointer;
   padding: 25px;
   width: 100%;
-  background-color: rgba(255, 255, 255, 0.1);
+  background-color: #fff;
   transition: all 0.5s ease-out;
 }
 
 .tabs button:hover {
-  color: white;
-  background-color: rgba(255, 255, 255, 0.15);
+  color: #000;
+  font-weight: 700;
 }
 
 .tabs button:disabled {
-  background: linear-gradient(245.39deg, #2ec4b6 -35.14%, #1e555c 143.06%);
-  color: white;
+  background: #59b686;
+  color: #000;
 }
 
 .title {
@@ -46,7 +51,6 @@ h1 {
 
 .content {
   padding: 30px 65px;
-  background-color: white;
   font-weight: 300;
   line-height: 30px;
   font-size: 16px;
@@ -62,7 +66,7 @@ footer {
   display: flex;
   justify-content: center;
   text-decoration: none;
-  margin: 50px 0;
+  /* margin: 50px 0; */
 }
 
 footer a {

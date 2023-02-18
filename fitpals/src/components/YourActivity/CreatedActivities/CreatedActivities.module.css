@@ -14,3 +14,17 @@
   display: flex;
   flex-wrap: wrap;
 }
+
+.description {
+  font-size: 1.2rem;
+  text-align: center;
+  margin: 50px auto 80px;
+  background-color: #fff;
+  padding: 30px;
+  border: 2px solid #2c8758;
+}
+
+.descriptionBold {
+  font-weight: 600;
+  margin: 20px;
+}

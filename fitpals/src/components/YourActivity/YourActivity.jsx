@@ -25,7 +25,7 @@ export const YourActivity = () => {
   };
 
   return (
-    <>
+    <div className={styles.mainSection}>
       <FormActivity />
       <div className={styles.container}>
         <div className={styles.tabs}>
@@ -53,6 +53,6 @@ export const YourActivity = () => {
           ))}
         </div>
       </div>
-    </>
+    </div>
   );
 };

@@ -9,6 +9,7 @@ import {
 } from "firebase/firestore";
 import styles from "./JoinedActivities.module.css";
 import { UpdateModal } from "../../Modals/UpdateModal/UpdateModal";
+import { NavLink } from "react-router-dom";
 
 export const JoinedActivities = () => {
   const [fitpals, setFitpals] = useState([]);
@@ -54,24 +55,39 @@ export const JoinedActivities = () => {
     <>
       <h2 className={styles.heading}>Aktywności w których bierzesz udział</h2>
       <ul className={styles.listBoxes}>
-        {fitpals.map(({ id, date, time, city, place, activity }) => (
-          <li key={id} className={styles.listItem}>
-            <p>Data: {date}</p>
-            <p>Godzina: {time}</p>
-            <p>Miasto: {city}</p>
-            <p>Miejsce: {place}</p>
-            <p>Aktywność: {activity}</p>
-            <button
-              className={styles.button}
-              onClick={() => {
-                handleUpdate(id);
-                setShow(true);
-              }}
-            >
-              Usuń aktywność
-            </button>
-          </li>
-        ))}
+        {fitpals.length > 0 ? (
+          fitpals.map(({ id, date, time, city, place, activity }) => (
+            <li key={id} className={styles.listItem}>
+              <p>Data: {date}</p>
+              <p>Godzina: {time}</p>
+              <p>Miasto: {city}</p>
+              <p>Miejsce: {place}</p>
+              <p>Aktywność: {activity}</p>
+              <button
+                className={styles.button}
+                onClick={() => {
+                  handleUpdate(id);
+                  setShow(true);
+                }}
+              >
+                Usuń aktywność
+              </button>
+            </li>
+          ))
+        ) : (
+          <div className={styles.description}>
+            <p>Na razie nie masz tutaj żadnych wydarzeń. &#x1F614;</p>
+            <p className={styles.descriptionBold}>Co możesz zrobić?</p>
+            <p>
+              Dodaj aktywność w formularzu powyżej lub dołącz do dowolnego
+              wydarzenia w zakładce "
+              <NavLink to="/find-fitpal" className={styles.link}>
+                Znajdź FitPala
+              </NavLink>
+              ".
+            </p>
+          </div>
+        )}
         <UpdateModal show={show} setShow={setShow} />
       </ul>
     </>

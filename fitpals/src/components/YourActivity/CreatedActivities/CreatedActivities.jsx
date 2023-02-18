@@ -12,6 +12,7 @@ import Activity from "./Activity";
 import styles from "./CreatedActivities.module.css";
 import { DeleteActivityModal } from "../../Modals/DeleteActivity/DeleteActivityModal";
 import { DeleteActivityModalError } from "../../Modals/DeleteActivity/DeleteActivityModalError";
+import { NavLink } from "react-router-dom";
 
 export const CreatedActivities = () => {
   const [fitpals, setFitpals] = useState([]);
@@ -67,20 +68,39 @@ export const CreatedActivities = () => {
     <>
       <h2 className={styles.heading}>Aktywności utworzone przez Ciebie</h2>
       <ul className={styles.listBoxes}>
-        {fitpals.map(({ id, date, time, city, place, activity }) => (
-          <li key={id} className={styles.listItem}>
-            <Activity
-              date={date}
-              time={time}
-              city={city}
-              place={place}
-              activity={activity}
-              activityId={id}
-              deleteActivity={handleDelete}
-              updateFitPal={handleUpdate}
-            />
-          </li>
-        ))}
+        {fitpals.length > 0 ? (
+          fitpals.map(({ id, date, time, city, place, activity }) => (
+            <li key={id} className={styles.listItem}>
+              <Activity
+                date={date}
+                time={time}
+                city={city}
+                place={place}
+                activity={activity}
+                activityId={id}
+                deleteActivity={handleDelete}
+                updateFitPal={handleUpdate}
+              />
+            </li>
+          ))
+        ) : (
+          <div className={styles.description}>
+            <p>Na razie nie masz tutaj żadnych wydarzeń. &#x1F614;</p>
+            <p className={styles.descriptionBold}>Co możesz zrobić?</p>
+            <p>
+              Dodaj aktywność w formularzu powyżej lub dołącz do dowolnego
+              wydarzenia w zakładce "
+              <NavLink to="/find-fitpal" className={styles.link}>
+                Znajdź FitPala
+              </NavLink>
+              ".
+              <p>
+                Znajdziesz je później przełączając się powyżej na sekcje
+                "Dołączono".
+              </p>
+            </p>
+          </div>
+        )}
       </ul>
       <DeleteActivityModal
         showDeleteActivityModal={showDeleteActivityModal}
