@@ -19,7 +19,7 @@ export const Contact = () => {
       )
       .then(
         (result) => {
-          console.log(result.text);
+          setShow(true);
         },
         (error) => {
           console.log(error.text);
@@ -57,7 +57,6 @@ export const Contact = () => {
           value="Wyślij"
           className={styles.sendButton}
           onClick={() => {
-            setShow(true);
             sendEmail();
           }}
         />

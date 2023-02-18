@@ -30,7 +30,7 @@ export function Footer() {
   );
 
   return (
-    <nav className={styles.footer}>
+    <footer className={styles.footer}>
       <img
         src={FooterLogo}
         alt="logo of company"
@@ -44,6 +44,6 @@ export function Footer() {
         <p>tel. +48 XXX XXX XXX</p>
       </article>
       <DevList />
-    </nav>
+    </footer>
   );
 }
