@@ -30,6 +30,7 @@ export const FormActivity = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
     addDoc(fitpalsCollection, getFormData(e));
+    setShow(true);
   };
 
   return (
@@ -101,13 +102,7 @@ export const FormActivity = () => {
           <option value="Boks">Boks</option>
         </select>
 
-        <button
-          type="submit"
-          className={styles.button}
-          onClick={() => {
-            setShow(true);
-          }}
-        >
+        <button type="submit" className={styles.button}>
           Dodaj aktywność
         </button>
         <AddActivityModal show={show} setShow={setShow} />
