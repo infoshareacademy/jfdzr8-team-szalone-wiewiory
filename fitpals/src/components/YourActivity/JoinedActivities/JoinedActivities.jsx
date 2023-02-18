@@ -8,10 +8,12 @@ import {
   getDoc,
 } from "firebase/firestore";
 import styles from "./JoinedActivities.module.css";
+import { UpdateModal } from "../../Modals/UpdateModal/UpdateModal";
 
 export const JoinedActivities = () => {
   const [fitpals, setFitpals] = useState([]);
   const fitpalsCollection = collection(db, "FitPals");
+  const [show, setShow] = useState(false);
   const currentUserId = auth?.currentUser?.uid;
 
   const getFitpals = (querySnapshot) => {
@@ -20,7 +22,6 @@ export const JoinedActivities = () => {
       ...doc.data(),
     }));
   };
-
 
   const handleUpdate = async (id) => {
     try {
@@ -43,9 +44,7 @@ export const JoinedActivities = () => {
     onSnapshot(fitpalsCollection, (querySnapshot) => {
       const data = getFitpals(querySnapshot);
       const filteredData = data.filter((element) =>
-        element.joinedUsers
-          ? element.joinedUsers.includes(auth.currentUser.uid)
-          : null
+        element.joinedUsers ? element.joinedUsers.includes(currentUserId) : null
       );
       setFitpals(filteredData);
     });
@@ -53,18 +52,27 @@ export const JoinedActivities = () => {
 
   return (
     <>
-      <h2 className={styles.heading}>Aktywności, do których dołączyłeś.</h2>
-      <ul>
+      <h2 className={styles.heading}>Aktywności w których bierzesz udział</h2>
+      <ul className={styles.listBoxes}>
         {fitpals.map(({ id, date, time, city, place, activity }) => (
           <li key={id} className={styles.listItem}>
             <p>Data: {date}</p>
             <p>Godzina: {time}</p>
             <p>Miasto: {city}</p>
             <p>Miejsce: {place}</p>
-            <p className={styles.activity}>Aktywność: {activity}</p>
-            <button onClick={() => handleUpdate(id)}>Usuń aktywność</button>
+            <p>Aktywność: {activity}</p>
+            <button
+              className={styles.button}
+              onClick={() => {
+                handleUpdate(id);
+                setShow(true);
+              }}
+            >
+              Usuń aktywność
+            </button>
           </li>
         ))}
+        <UpdateModal show={show} setShow={setShow} />
       </ul>
     </>
   );

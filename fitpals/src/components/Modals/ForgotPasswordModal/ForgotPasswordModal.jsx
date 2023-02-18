@@ -1,9 +1,9 @@
 import React from "react";
-import styles from "./AddActivityModal.module.css";
+import styles from "./ForgotPasswordModal.module.css";
 import Logo from "../../Images/FitPalLogo.png";
 import CancelButton from "../../../Assets/cancel button.svg";
 
-export const AddActivityModal = ({ show, setShow }) => {
+export const ForgotPasswordModal = ({ show, setShow }) => {
   const content = show && (
     <div className={styles.modal}>
       <button
@@ -17,7 +17,7 @@ export const AddActivityModal = ({ show, setShow }) => {
           className={styles.cancelButton}
         />
       </button>
-      <h1>Utworzyłeś nową aktywność !</h1>
+      <h1>Za chwilę otrzymasz maila do resetu hasła !</h1>
       <img src={Logo} alt="logo of company" className={styles.logo} />
     </div>
   );

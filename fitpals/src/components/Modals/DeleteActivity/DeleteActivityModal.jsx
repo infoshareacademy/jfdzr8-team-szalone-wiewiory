@@ -1,15 +1,18 @@
 import React from "react";
-import styles from "./AddActivityModal.module.css";
+import styles from "./DeleteActivityModal.module.css";
 import Logo from "../../Images/FitPalLogo.png";
 import CancelButton from "../../../Assets/cancel button.svg";
 
-export const AddActivityModal = ({ show, setShow }) => {
-  const content = show && (
+export const DeleteActivityModal = ({
+  showDeleteActivityModal,
+  setShowDeleteActivityModal,
+}) => {
+  const content = showDeleteActivityModal && (
     <div className={styles.modal}>
       <button
         className={styles.modalClose}
         type="button"
-        onClick={() => setShow(false)}
+        onClick={() => setShowDeleteActivityModal(false)}
       >
         <img
           src={CancelButton}
@@ -17,7 +20,7 @@ export const AddActivityModal = ({ show, setShow }) => {
           className={styles.cancelButton}
         />
       </button>
-      <h1>Utworzyłeś nową aktywność !</h1>
+      <h1>Poprawnie usunięto aktywność</h1>
       <img src={Logo} alt="logo of company" className={styles.logo} />
     </div>
   );

@@ -1,6 +1,6 @@
 import React from "react";
 import styles from "./Footer.module.css";
-import FooterLogo from "../Footer/FooterImages/FitPals.webp";
+import FooterLogo from "../../Assets/FitPalLogo.png";
 import GitHubLogo from "../Footer/FooterImages/GitHubLogo.svg";
 
 export function Footer() {
@@ -24,7 +24,7 @@ export function Footer() {
   );
   const DevList = () => (
     <div className={styles.devContainer}>
-      <h2>DEVELOPERS</h2>
+      <h2>PROGRAMIŚCI</h2>
       <div className={styles.devList}>{devName.map(developer)}</div>
     </div>
   );
@@ -37,7 +37,7 @@ export function Footer() {
         className={styles.footerLogo}
       />
       <article className={styles.footerOption}>
-        <p className={styles.footerTitle}>FITPALS</p>
+        <p className={styles.footerTitle}>FITPAL</p>
         <p>ul. Bootcampowa, pokój 69</p>
         <p>404 City Not-Found</p>
         <p>e-mail: biuro.fitpals@gmail.com</p>
