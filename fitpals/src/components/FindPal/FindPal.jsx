@@ -22,7 +22,7 @@ export const FindPal = () => {
   }, []);
   return (
     <div className={styles.findPalSection}>
-      <p>Znajdź FitPala</p>
+      <h2 className={styles.formHeader}>Znajdź FitPala</h2>
       <Search setSearchData={setSearchData} />
       {isAuth && <Results searchData={searchData} />}
       {!isAuth && (
