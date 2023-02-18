@@ -38,22 +38,24 @@ export const Navbar = ({ isAuth }) => {
 
         {isAuth ? (
           <li>
-            <NavLink to="/" className={styles.navLink}>
-              <button className={styles.button} onClick={() => signOut(auth)}>
-                Wyloguj się
-              </button>
+            <NavLink
+              to="/"
+              className={styles.navLink}
+              onClick={() => signOut(auth)}
+            >
+              Wyloguj się
             </NavLink>
           </li>
         ) : (
           <>
             <li>
               <NavLink to="/login" className={styles.navLink}>
-                <button className={styles.button}>Zaloguj się</button>
+                Zaloguj się
               </NavLink>
             </li>
             <li>
               <NavLink to="/register" className={styles.navLink}>
-                <button className={styles.button}>Zarejestruj się</button>
+                Zarejestruj się
               </NavLink>
             </li>
           </>
