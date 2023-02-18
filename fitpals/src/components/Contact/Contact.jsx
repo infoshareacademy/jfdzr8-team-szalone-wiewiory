@@ -22,7 +22,7 @@ export const Contact = () => {
           setShow(true);
         },
         (error) => {
-          console.log(error.text);
+          console.error(error.text);
         }
       );
     e.target.reset();

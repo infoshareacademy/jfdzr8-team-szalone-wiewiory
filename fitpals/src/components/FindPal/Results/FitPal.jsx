@@ -36,8 +36,8 @@ export const FitPal = ({ id, activity, city, date, time, place }) => {
       ...fitpal.current,
       joinedUsers: usersList,
     })
-      .then(() => console.log("success"))
-      .catch((error) => console.log("already exist"));
+      .then(() => {})
+      .catch((error) => console.error("already exist"));
   };
 
   return (
