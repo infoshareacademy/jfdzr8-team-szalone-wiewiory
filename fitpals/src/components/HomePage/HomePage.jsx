@@ -141,49 +141,31 @@ export const HomePage = () => {
             className={styles.mySwiperSlide}
           >
             <SwiperSlide>
-              <a href="Tennis">
-                <img src={icon1} className={styles.icon} alt=""></img>
-              </a>
+              <img src={icon1} className={styles.icon} alt=""></img>
             </SwiperSlide>
             <SwiperSlide>
-              <a href="Swimming">
-                <img src={icon2} className={styles.icon} alt=""></img>
-              </a>
+              <img src={icon2} className={styles.icon} alt=""></img>
             </SwiperSlide>
             <SwiperSlide>
-              <a href="Running">
-                <img src={icon3} className={styles.icon} alt=""></img>
-              </a>
+              <img src={icon3} className={styles.icon} alt=""></img>
             </SwiperSlide>
             <SwiperSlide>
-              <a href="Gym">
-                <img src={icon4} className={styles.icon} alt=""></img>
-              </a>
+              <img src={icon4} className={styles.icon} alt=""></img>
             </SwiperSlide>
             <SwiperSlide>
-              <a href="Bike">
-                <img src={icon5} className={styles.icon} alt=""></img>
-              </a>
+              <img src={icon5} className={styles.icon} alt=""></img>
             </SwiperSlide>
             <SwiperSlide>
-              <a href="Basket">
-                <img src={icon6} className={styles.icon} alt=""></img>
-              </a>
+              <img src={icon6} className={styles.icon} alt=""></img>
             </SwiperSlide>
             <SwiperSlide>
-              <a href="Climbing">
-                <img src={icon7} className={styles.icon} alt=""></img>
-              </a>
+              <img src={icon7} className={styles.icon} alt=""></img>
             </SwiperSlide>
             <SwiperSlide>
-              <a href="Box">
-                <img src={icon8} className={styles.icon} alt=""></img>
-              </a>
+              <img src={icon8} className={styles.icon} alt=""></img>
             </SwiperSlide>
             <SwiperSlide>
-              <a href="Hiking">
-                <img src={icon9} className={styles.icon} alt=""></img>
-              </a>
+              <img src={icon9} className={styles.icon} alt=""></img>
             </SwiperSlide>
           </Swiper>
         </section>
