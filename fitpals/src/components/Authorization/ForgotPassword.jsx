@@ -2,7 +2,6 @@ import { sendPasswordResetEmail } from "@firebase/auth";
 import { auth } from "../../api/firebase";
 import { getFormData } from "./getFormData";
 import { Form } from "../Authorization/Form";
-// import { firebaseErrors } from "../Authorization/firebaseErrors";
 import styles from "./ForgotPassword.module.css";
 import { useState } from "react";
 import { ForgotPasswordModal } from "../Modals/ForgotPasswordModal/ForgotPasswordModal";
@@ -17,8 +16,6 @@ export const ForgotPassword = () => {
     setShow(true);
     sendPasswordResetEmail(auth, email).catch((e) => {
       console.dir(e);
-
-      // alert(firebaseErrors[e.code]);
     });
   };
 
