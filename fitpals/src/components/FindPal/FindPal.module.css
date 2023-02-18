@@ -7,24 +7,23 @@
 }
 
 .findPalSection {
-  background: url(../../Assets/backrgound-svg-svg1.svg) no-repeat;
-  background-attachment: cover;
-  background-position: center bottom;
-  margin-bottom: -5px;
+  background: url(../../Assets/backgroundYourActivity.svg) no-repeat;
+  background-position: bottom;
+  padding-bottom: 100px;
 }
 
 .infoBox {
   display: flex;
   flex-direction: column;
-  margin: auto 180px;
+  margin: 100px 180px;
   text-align: center;
   background-color: #fff;
-  padding: 30px;
+  padding: 50px;
   border: 2px solid #2c8758;
   color: #2f323f;
+  line-height: 20px;
 }
 
-.link {
-  text-decoration: none;
+.header {
   padding: 5px;
 }
