@@ -7,7 +7,7 @@ import { NavLink } from "react-router-dom";
 
 export const ActivityAdded = ({ show, setShow }) => {
   return (
-    <NavLink to="/my-fitpal">
+    <>
       {show ? (
         <div className={styles.modal}>
           <button
@@ -21,10 +21,17 @@ export const ActivityAdded = ({ show, setShow }) => {
               className={styles.cancelButton}
             />
           </button>
-          <h1>Dodano aktywność do twoich FitPali !</h1>
+          <h1>
+            Dodano aktywność do
+            <NavLink to="/my-fitpal" className={styles.link}>
+              {" "}
+              twoich FitPali
+            </NavLink>{" "}
+            !
+          </h1>
           <img src={Logo} alt="logo of company" className={styles.logo} />
         </div>
       ) : null}
-    </NavLink>
+    </>
   );
 };

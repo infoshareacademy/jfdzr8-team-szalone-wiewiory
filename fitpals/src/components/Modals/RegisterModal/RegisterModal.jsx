@@ -7,7 +7,7 @@ import { NavLink } from "react-router-dom";
 
 export const RegisterModal = ({ show, setShow }) => {
   return (
-    <NavLink to="/login">
+    <>
       {show ? (
         <div className={styles.modal}>
           <button
@@ -15,16 +15,18 @@ export const RegisterModal = ({ show, setShow }) => {
             type="button"
             onClick={() => setShow(false)}
           >
-            <img
-              src={CancelButton}
-              alt="cancel button"
-              className={styles.cancelButton}
-            />
+            <NavLink to="/login">
+              <img
+                src={CancelButton}
+                alt="cancel button"
+                className={styles.cancelButton}
+              />
+            </NavLink>
           </button>
           <h1>Gratulacje, zostałeś poprawnie zarejestrowany !</h1>
           <img src={Logo} alt="logo of company" className={styles.logo} />
         </div>
       ) : null}
-    </NavLink>
+    </>
   );
 };
