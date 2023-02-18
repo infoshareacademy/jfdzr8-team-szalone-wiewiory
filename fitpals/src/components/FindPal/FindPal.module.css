@@ -5,3 +5,10 @@
   margin-top: 30px;
   margin-bottom: 10px;
 }
+
+.findPalSection {
+  background: url(../../Assets/backrgound-svg-svg1.svg) no-repeat;
+  background-attachment: cover;
+  background-position: center bottom;
+  margin-bottom: -5px;
+}

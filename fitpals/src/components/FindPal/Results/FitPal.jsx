@@ -58,6 +58,7 @@ export const FitPal = ({ id, activity, city, date, time, place }) => {
         <b>Miejsce:</b> {place}
       </p>
       <button
+        className={styles.submit}
         onClick={() => {
           setDisable(true);
           setShow(true);
