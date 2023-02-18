@@ -61,3 +61,13 @@
   font-weight: 600;
   margin: 20px;
 }
+
+.link {
+  color: #4adc91;
+  text-decoration: none;
+}
+
+.link:hover {
+  color: #2c8758;
+  transition: all 0.5s ease-in-out;
+}

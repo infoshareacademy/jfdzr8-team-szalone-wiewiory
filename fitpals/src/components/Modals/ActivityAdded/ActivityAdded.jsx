@@ -22,11 +22,10 @@ export const ActivityAdded = ({ show, setShow }) => {
             />
           </button>
           <h1>
-            Dodano aktywność do
+            Dodano aktywność do{" "}
             <NavLink to="/my-fitpal" className={styles.link}>
-              {" "}
               twoich FitPali
-            </NavLink>{" "}
+            </NavLink>
             !
           </h1>
           <img src={Logo} alt="logo of company" className={styles.logo} />
