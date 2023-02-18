@@ -17,11 +17,13 @@ export const Navbar = ({ isAuth }) => {
             Znajdź FitPala
           </NavLink>
         </li>
-        <li>
-          <NavLink to="/my-fitpal" className={styles.navLink}>
-            Moje FitPale
-          </NavLink>
-        </li>
+        {isAuth && (
+          <li>
+            <NavLink to="/my-fitpal" className={styles.navLink}>
+              Moje FitPale
+            </NavLink>
+          </li>
+        )}
         <li>
           <NavLink to="/premium" className={styles.navLink}>
             Premium
