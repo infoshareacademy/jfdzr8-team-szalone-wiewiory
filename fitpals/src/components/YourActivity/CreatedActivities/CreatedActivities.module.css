@@ -1,7 +1,9 @@
 .heading {
+  margin: 0px;
   text-align: center;
-  margin: 2rem;
-  font-size: 2rem;
+  color: #2f323f;
+  margin-top: 30px;
+  margin-bottom: 10px;
 }
 
 .listItem {
@@ -13,6 +15,7 @@
 .listBoxes {
   display: flex;
   flex-wrap: wrap;
+  justify-content: center;
 }
 
 .description {
@@ -27,4 +30,14 @@
 .descriptionBold {
   font-weight: 600;
   margin: 20px;
+}
+
+.link {
+  color: #4adc91;
+  text-decoration: none;
+}
+
+.link:hover {
+  color: #2c8758;
+  transition: all 0.5s ease-in-out;
 }

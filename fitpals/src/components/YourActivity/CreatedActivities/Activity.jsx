@@ -36,9 +36,21 @@ const Activity = ({
   };
 
   return (
-    <>
+    <div className={styles.box}>
       {editMode ? (
         <div className={styles.activeEditBox}>
+          <label htmlFor="city" className={styles.label}>
+            Miasto:
+          </label>
+          <input
+            onChange={handleChange}
+            type="text"
+            name="city"
+            id="city"
+            value={fitpalData.city}
+            className={styles.input}
+          />
+
           <label htmlFor="date" className={styles.label}>
             Data:
           </label>
@@ -63,18 +75,6 @@ const Activity = ({
             className={styles.input}
           />
 
-          <label htmlFor="city" className={styles.label}>
-            Miasto:
-          </label>
-          <input
-            onChange={handleChange}
-            type="text"
-            name="city"
-            id="city"
-            value={fitpalData.city}
-            className={styles.input}
-          />
-
           <label htmlFor="place" className={styles.label}>
             Miejsce:
           </label>
@@ -87,7 +87,7 @@ const Activity = ({
             className={styles.input}
           />
 
-          <p>Aktywność: {activity}</p>
+          <p className={styles.activity}>Aktywność: {activity}</p>
 
           <button
             className={styles.button}
@@ -104,18 +104,28 @@ const Activity = ({
         </div>
       ) : (
         <div className={styles.activityBox}>
-          <p>Data: {date}</p>
-          <p>Godzina: {time}</p>
-          <p>Miasto: {city}</p>
-          <p>Miejsce: {place}</p>
-          <p>Aktywność: {activity}</p>
+          <p>
+            <strong>Aktywność:</strong> {activity}
+          </p>
+          <p>
+            <strong>Miasto:</strong> {city}
+          </p>
+          <p>
+            <strong>Data:</strong> {date}
+          </p>
+          <p>
+            <strong>Godzina:</strong> {time}
+          </p>
+          <p>
+            <strong>Miejsce:</strong> {place}
+          </p>
           <button
-            className={styles.button}
+            className={styles.button1}
             onClick={() => deleteActivity(activityId)}
           >
             Usuń aktywność
           </button>
-          <button className={styles.button} onClick={() => setEditMode(true)}>
+          <button className={styles.button2} onClick={() => setEditMode(true)}>
             Edytuj
           </button>
         </div>
@@ -128,7 +138,7 @@ const Activity = ({
         showCancelEditModal={showCancelEditModal}
         setShowCancelEditModal={setShowCancelEditModal}
       />
-    </>
+    </div>
   );
 };
 

@@ -30,13 +30,11 @@ export const FormActivity = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
     addDoc(fitpalsCollection, getFormData(e));
+    setShow(true);
   };
 
   return (
-    <>
-      <h2 className={styles.formHeading}>
-        Dodaj nową aktywność - nowego FitPala
-      </h2>
+    <div className={styles.wrapper}>
       <form onSubmit={handleSubmit} className={styles.form}>
         <label htmlFor="date" className={styles.label}>
           Podaj datę aktywności:
@@ -101,17 +99,11 @@ export const FormActivity = () => {
           <option value="Boks">Boks</option>
         </select>
 
-        <button
-          type="submit"
-          className={styles.button}
-          onClick={() => {
-            setShow(true);
-          }}
-        >
+        <button type="submit" className={styles.button}>
           Dodaj aktywność
         </button>
         <AddActivityModal show={show} setShow={setShow} />
       </form>
-    </>
+    </div>
   );
 };

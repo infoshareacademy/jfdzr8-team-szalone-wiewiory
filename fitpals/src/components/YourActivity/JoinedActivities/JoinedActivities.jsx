@@ -58,11 +58,23 @@ export const JoinedActivities = () => {
         {fitpals.length > 0 ? (
           fitpals.map(({ id, date, time, city, place, activity }) => (
             <li key={id} className={styles.listItem}>
-              <p>Data: {date}</p>
-              <p>Godzina: {time}</p>
-              <p>Miasto: {city}</p>
-              <p>Miejsce: {place}</p>
-              <p>Aktywność: {activity}</p>
+              <p>
+                <strong>Aktywność:</strong> {activity}
+              </p>
+              <p>
+                <strong>Miasto:</strong> {city}
+              </p>
+              <p>
+                <strong>Data:</strong> {date}
+              </p>
+              <p>
+                <strong>Godzina:</strong> {time}
+              </p>
+
+              <p>
+                <strong>Miejsce:</strong> {place}
+              </p>
+
               <button
                 className={styles.button}
                 onClick={() => {

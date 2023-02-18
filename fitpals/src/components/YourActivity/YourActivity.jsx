@@ -26,6 +26,9 @@ export const YourActivity = () => {
 
   return (
     <div className={styles.mainSection}>
+      <h2 className={styles.formHeading}>
+        Dodaj nową aktywność - nowego FitPala
+      </h2>
       <FormActivity />
       <div className={styles.container}>
         <div className={styles.tabs}>
