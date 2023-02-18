@@ -36,3 +36,17 @@
   background-color: #fff;
   transition: 0.7s;
 }
+
+.description {
+  font-size: 1.2rem;
+  text-align: center;
+  margin: 50px auto 110px;
+  background-color: #fff;
+  padding: 30px;
+  border: 2px solid #2c8758;
+}
+
+.descriptionBold {
+  font-weight: 600;
+  margin: 20px;
+}
