@@ -12,3 +12,19 @@
   background-position: center bottom;
   margin-bottom: -5px;
 }
+
+.infoBox {
+  display: flex;
+  flex-direction: column;
+  margin: auto 180px;
+  text-align: center;
+  background-color: #fff;
+  padding: 30px;
+  border: 2px solid #2c8758;
+  color: #2f323f;
+}
+
+.link {
+  text-decoration: none;
+  padding: 5px;
+}

@@ -26,18 +26,18 @@ export const FindPal = () => {
       <Search setSearchData={setSearchData} />
       {isAuth && <Results searchData={searchData} />}
       {!isAuth && (
-        <>
+        <div className={styles.infoBox}>
           <h2>
             Zaloguj się aby wyświetlić wszystkie FitPale i Twoje wyniki
             wyszukiwania
           </h2>
-          <NavLink to="/login">
-            <button>Zaloguj się</button>
+          <NavLink to="/login" className={styles.link}>
+            Zaloguj się
           </NavLink>
-          <NavLink to="/register">
-            <button>Zarejestruj się</button>
+          <NavLink to="/register" className={styles.link}>
+            Zarejestruj się
           </NavLink>
-        </>
+        </div>
       )}
     </div>
   );

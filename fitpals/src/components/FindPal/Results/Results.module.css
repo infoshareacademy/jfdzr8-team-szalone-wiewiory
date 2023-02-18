@@ -3,6 +3,7 @@
   box-sizing: border-box;
   margin: 0 10px;
   flex-wrap: wrap;
+  justify-content: center;
 }
 
 .contentBox {
@@ -36,4 +37,9 @@
   background-color: #ffffff;
   color: #2c8758;
   transition: 0.7s;
+}
+
+.submit:disabled {
+  background: #59b686;
+  color: #000;
 }
