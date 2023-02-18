@@ -34,10 +34,7 @@ export const FormActivity = () => {
   };
 
   return (
-    <>
-      <h2 className={styles.formHeading}>
-        Dodaj nową aktywność - nowego FitPala
-      </h2>
+    <div className={styles.wrapper}>
       <form onSubmit={handleSubmit} className={styles.form}>
         <label htmlFor="date" className={styles.label}>
           Podaj datę aktywności:
@@ -107,6 +104,6 @@ export const FormActivity = () => {
         </button>
         <AddActivityModal show={show} setShow={setShow} />
       </form>
-    </>
+    </div>
   );
 };
