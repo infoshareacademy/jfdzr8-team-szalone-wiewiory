@@ -50,7 +50,7 @@
   align-items: center;
   background-color: white;
   border-radius: 2px;
-  height: 50px;
+  height: 40px;
 }
 
 .selectionInput,
@@ -59,4 +59,16 @@
   justify-content: center;
   align-items: center;
   flex-direction: column;
+}
+
+.dateInput {
+  height: 40px;
+  width: 115px;
+  margin-right: 5px;
+}
+
+.timeInput {
+  height: 40px;
+  width: 75px;
+  margin-left: 5px;
 }
