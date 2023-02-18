@@ -21,6 +21,7 @@ import icon6 from "../../Assets/Icons/Basket.png";
 import icon7 from "../../Assets/Icons/Climbing.png";
 import icon8 from "../../Assets/Icons/Box.png";
 import icon9 from "../../Assets/Icons/Hiking.png";
+import FitPalLogo from "../../Assets/FitPalLogo.png";
 
 import styles from "./HomePage.module.css";
 
@@ -30,7 +31,7 @@ export const HomePage = () => {
       <section className={styles.wrapper}>
         <div className={styles.backgroundImage}>
           <div className={styles.sideFlex}>
-            <h1 className={styles.homePageTitle}>FITPALS</h1>
+            <h1 className={styles.homePageTitle}>FITPAL</h1>
 
             <p className={styles.homePageText}>
               Fitpal działa od 15 lat, skorzystało z niego ponad 200000 osób.
@@ -137,7 +138,7 @@ export const HomePage = () => {
               },
             }}
             modules={[Pagination]}
-            className="mySwiper"
+            className={styles.mySwiperSlide}
           >
             <SwiperSlide>
               <a href="Tennis">
