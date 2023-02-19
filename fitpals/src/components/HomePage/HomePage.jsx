@@ -55,31 +55,31 @@ export const HomePage = () => {
           modules={[Autoplay, Pagination, Navigation]}
           className={styles.mySwiper}
         >
-          <SwiperSlide>
+          <SwiperSlide className={styles.swiperSliders}>
             <img src={img1} className={styles.swiperSlide} alt="" />
             <p className={styles.swiperDescription}>
               Chcesz pobiegać, ale nie masz z kim?
             </p>
           </SwiperSlide>
-          <SwiperSlide>
+          <SwiperSlide className={styles.swiperSliders}>
             <img src={img2} className={styles.swiperSlide} alt="" />
             <p className={styles.swiperDescription}>
               Masz ochotę pograć w kosza, ale nie sam?
             </p>
           </SwiperSlide>
-          <SwiperSlide>
+          <SwiperSlide className={styles.swiperSliders}>
             <img src={img5} className={styles.swiperSlide} alt="" />
             <p className={styles.swiperDescriptionSecondary}>
               Szukasz przyjaciela, partnera, sportowego towarzystwa?
             </p>
           </SwiperSlide>
-          <SwiperSlide>
+          <SwiperSlide className={styles.swiperSliders}>
             <img src={img4} className={styles.swiperSlide} alt="" />
             <p className={styles.swiperDescriptionSecondary}>
               Chcesz poznawać nowych ludzi?
             </p>
           </SwiperSlide>
-          <SwiperSlide>
+          <SwiperSlide className={styles.swiperSliders}>
             <img src={img3} className={styles.swiperSlide} alt="" />
             <p className={styles.swiperDescription}>
               A może szukasz towarzystwa do meczu piłki nożnej?
